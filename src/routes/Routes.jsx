@@ -6,6 +6,7 @@ import MyArts from "../pages/MyArts";
 import AddCraft from "../pages/AddCraft";
 import Login from "../pages/Login";
 import Register from "../pages/Register";
+import PrivateRoute from "../privateRoute/PrivateRoute";
 
 const router = createBrowserRouter([
   {
@@ -22,11 +23,19 @@ const router = createBrowserRouter([
       },
       {
         path: "/myArts",
-        element: <MyArts></MyArts>,
+        element: (
+          <PrivateRoute>
+            <MyArts></MyArts>
+          </PrivateRoute>
+        ),
       },
       {
         path: "/addCraft",
-        element: <AddCraft></AddCraft>,
+        element: (
+          <PrivateRoute>
+            <AddCraft></AddCraft>
+          </PrivateRoute>
+        ),
       },
       {
         path: "/login",

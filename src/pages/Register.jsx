@@ -1,13 +1,17 @@
 import { useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
 
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { IoEyeOffOutline, IoEyeOutline } from "react-icons/io5";
 import Swal from "sweetalert2";
 import { Helmet } from "react-helmet";
+import { AuthContext } from "../authProvider/AuthProvider";
+import { updateProfile } from "firebase/auth";
+import auth from "../firebase/firebase.config";
 
 const Register = () => {
   const [toggle, setToggle] = useState(true);
+  const { createUser } = useContext(AuthContext);
 
   // react hook form
   const {
@@ -44,7 +48,34 @@ const Register = () => {
         timer: 1500,
       });
     } else {
-      // create user
+      // createUser with email and password
+      createUser(email, password)
+        .then((result) => {
+          console.log(result.user);
+          updateProfile(auth.currentUser, {
+            displayName: name,
+            photoURL: photoURL,
+          }).then(() => {
+            Swal.fire({
+              position: "top-end",
+              icon: "success",
+              title: "Registered your account",
+              showConfirmButton: false,
+              timer: 1500,
+            });
+          });
+        })
+        .catch((error) => {
+          Swal.fire({
+            position: "top-end",
+            icon: "error",
+            title: "Something is wrong",
+            showConfirmButton: false,
+            timer: 1500,
+            html: `${error.message}`,
+          });
+        });
+
       console.log({ name, photoURL, email, password });
     }
   };

@@ -2,11 +2,14 @@ import { useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
 
 import { IoEyeOutline, IoEyeOffOutline } from "react-icons/io5";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { Helmet } from "react-helmet";
+import { AuthContext } from "../authProvider/AuthProvider";
+import Swal from "sweetalert2";
 
 const Login = () => {
   const [toggle, setToggle] = useState(true);
+  const { loginUser } = useContext(AuthContext);
 
   // react hook form
   const {
@@ -18,7 +21,27 @@ const Login = () => {
   // form submit
   const onSubmit = ({ email, password }) => {
     // login user
-    console.log(email, password);
+    loginUser(email, password)
+      .then((result) => {
+        console.log(result.user);
+        Swal.fire({
+          position: "top-end",
+          icon: "success",
+          title: "User Successfully Login",
+          showConfirmButton: false,
+          timer: 1500,
+        });
+      })
+      .catch((error) => {
+        Swal.fire({
+          position: "top-end",
+          icon: "error",
+          title: "Something is wrong",
+          showConfirmButton: false,
+          timer: 1500,
+          html: `${error.message}`,
+        });
+      });
   };
 
   return (

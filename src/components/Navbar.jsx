@@ -1,9 +1,32 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { FaBarsStaggered } from "react-icons/fa6";
+import { AuthContext } from "../authProvider/AuthProvider";
+import { signOut } from "firebase/auth";
+import auth from "../firebase/firebase.config";
+import Swal from "sweetalert2";
 
 const Navbar = () => {
   const [theme, setTheme] = useState(true);
+  const { user, setUser } = useContext(AuthContext);
+
+  const handleLogout = () => {
+    // logout
+    signOut(auth)
+      .then(() => {
+        setUser("");
+        Swal.fire({
+          position: "top-end",
+          icon: "success",
+          title: "Successfully Logout",
+          showConfirmButton: false,
+          timer: 1500,
+        });
+      })
+      .catch((error) => {
+        console.log(error.message);
+      });
+  };
 
   if (theme) {
     document
@@ -21,13 +44,17 @@ const Navbar = () => {
       <li className=" text-base-400 ">
         <NavLink to="/allArts">All Arts</NavLink>
       </li>
-      <li className=" text-base-400 ">
-        <NavLink to="/addCraft">Add Craft</NavLink>
-      </li>
-
-      <li className=" text-base-400 ">
-        <NavLink to="/myArts">My Arts</NavLink>
-      </li>
+      {user && (
+        <>
+          {" "}
+          <li className=" text-base-400 ">
+            <NavLink to="/addCraft">Add Craft</NavLink>
+          </li>
+          <li className=" text-base-400 ">
+            <NavLink to="/myArts">My Arts</NavLink>
+          </li>
+        </>
+      )}
     </>
   );
 
@@ -67,42 +94,60 @@ const Navbar = () => {
       </div>
       <div className="navbar-end space-x-3">
         {/* if user login or not login */}
-        <div className="dropdown dropdown-end">
-          <div
-            tabIndex={0}
-            role="button"
-            className="btn btn-ghost btn-circle avatar z-[999]"
-          >
-            <div className="w-10 rounded-full">
-              <img
-                alt="Tailwind CSS Navbar component"
-                src="img/userProfile.jpg"
-              />
+        {user && (
+          <>
+            <div className="dropdown dropdown-end">
+              <div
+                tabIndex={0}
+                role="button"
+                className="btn btn-ghost btn-circle avatar z-[999]"
+              >
+                <div className="w-10 rounded-full">
+                  <img
+                    alt="Tailwind CSS Navbar component"
+                    src={`${user.photoURL}` || "img/userProfile.jpg"}
+                  />
+                </div>
+              </div>
+              <ul
+                tabIndex={0}
+                className="menu menu-sm space-y-1 dropdown-content mt-3 z-[999] p-2 shadow bg-base-100 rounded-box w-52"
+              >
+                <li>
+                  <a>{user.displayName || "no name"} </a>
+                </li>
+                <li>
+                  <a>{user.email || "no email"}</a>
+                </li>
+                <li>
+                  <button
+                    onClick={handleLogout}
+                    className="btn font-bold btn-sm text-white bg-[#E35353] border-none hover:bg-[#E35353]"
+                  >
+                    LogOut
+                  </button>
+                </li>
+              </ul>
             </div>
-          </div>
-          <ul
-            tabIndex={0}
-            className="menu menu-sm space-y-1 dropdown-content mt-3 z-[999] p-2 shadow bg-base-100 rounded-box w-52"
-          >
-            <li>
-              <a>Not Found Name</a>
-            </li>
-            <li>
-              <a>Not Found Name</a>
-            </li>
-            <li>
-              <button className="btn font-bold btn-sm text-white bg-[#E35353] border-none hover:bg-[#E35353]">
-                LogOut
-              </button>
-            </li>
-          </ul>
-        </div>{" "}
-        <Link
-          to="/login"
-          className="btn font-bold text-white bg-[#E35353] border-none hover:bg-[#E35353]"
-        >
-          Login
-        </Link>
+          </>
+        )}
+        {!user && (
+          <>
+            {" "}
+            <Link
+              to="/login"
+              className="btn rounded-[4px] font-bold text-white bg-[#E35353] border-none hover:bg-[#E35353]"
+            >
+              Login
+            </Link>
+            <Link
+              to="/register"
+              className="btn rounded-[4px] font-bold text-white bg-[#E35353] border-none hover:bg-[#E35353]"
+            >
+              Register
+            </Link>
+          </>
+        )}
         {/* theme dark light */}
         <label className="swap swap-rotate">
           {/* this hidden checkbox controls the state */}
