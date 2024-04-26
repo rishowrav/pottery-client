@@ -2,7 +2,7 @@ import { Link, NavLink } from "react-router-dom";
 
 const Footer = () => {
   return (
-    <footer className="bg-base-200 ">
+    <footer className="bg-base-200 mt-24 ">
       <div className="footer py-10 lg:px-0 px-1 w-[1100px] container mx-auto text-base-content">
         <aside>
           {/* logo */}

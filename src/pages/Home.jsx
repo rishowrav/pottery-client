@@ -3,7 +3,7 @@ import Slider from "../components/slider";
 
 const Home = () => {
   return (
-    <div className="space-y-24 mb-24">
+    <div className="space-y-24 ">
       {/* <h1 className="text-4xl">Home</h1> */}
       <Slider></Slider>
 
