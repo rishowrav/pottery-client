@@ -1,5 +1,5 @@
 import { useForm } from "react-hook-form";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 import { useContext, useState } from "react";
 import { IoEyeOffOutline, IoEyeOutline } from "react-icons/io5";
@@ -12,6 +12,8 @@ import auth from "../firebase/firebase.config";
 const Register = () => {
   const [toggle, setToggle] = useState(true);
   const { createUser } = useContext(AuthContext);
+
+  const navigate = useNavigate();
 
   // react hook form
   const {
@@ -50,8 +52,7 @@ const Register = () => {
     } else {
       // createUser with email and password
       createUser(email, password)
-        .then((result) => {
-          console.log(result.user);
+        .then(() => {
           updateProfile(auth.currentUser, {
             displayName: name,
             photoURL: photoURL,
@@ -63,6 +64,7 @@ const Register = () => {
               showConfirmButton: false,
               timer: 1500,
             });
+            navigate("/");
           });
         })
         .catch((error) => {
@@ -75,8 +77,6 @@ const Register = () => {
             html: `${error.message}`,
           });
         });
-
-      console.log({ name, photoURL, email, password });
     }
   };
 

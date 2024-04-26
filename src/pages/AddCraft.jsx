@@ -49,13 +49,13 @@ const AddCraft = () => {
           </div>
           <div className="form-control md:w-1/2 ml-4">
             <label className="label">
-              <span className="label-text">Available Quantity</span>
+              <span className="label-text">Subcategory Name</span>
             </label>
             <label className="input-group">
               <input
                 type="text"
                 name="quantity"
-                placeholder="Available Quantity"
+                placeholder="Subcategory Name"
                 className="input input-bordered w-full"
               />
             </label>
@@ -65,26 +65,26 @@ const AddCraft = () => {
         <div className="md:flex mb-8">
           <div className="form-control md:w-1/2">
             <label className="label">
-              <span className="label-text">Supplier Name</span>
+              <span className="label-text">User Email</span>
             </label>
             <label className="input-group">
               <input
                 type="text"
                 name="supplier"
-                placeholder="Supplier Name"
+                placeholder="User Email"
                 className="input input-bordered w-full"
               />
             </label>
           </div>
           <div className="form-control md:w-1/2 ml-4">
             <label className="label">
-              <span className="label-text">Taste</span>
+              <span className="label-text">User Name</span>
             </label>
             <label className="input-group">
               <input
                 type="text"
                 name="taste"
-                placeholder="Taste"
+                placeholder="User Name"
                 className="input input-bordered w-full"
               />
             </label>
@@ -94,13 +94,13 @@ const AddCraft = () => {
         <div className="md:flex mb-8">
           <div className="form-control md:w-1/2">
             <label className="label">
-              <span className="label-text">Category</span>
+              <span className="label-text">Price</span>
             </label>
             <label className="input-group">
               <input
                 type="text"
                 name="category"
-                placeholder="Category"
+                placeholder="Price"
                 className="input input-bordered w-full"
               />
             </label>
@@ -135,9 +135,25 @@ const AddCraft = () => {
             </label>
           </div>
         </div>
+        {/* Description row */}
+        <div className="mb-8">
+          <div className="form-control w-full">
+            <label className="label">
+              <span className="label-text">Description</span>
+            </label>
+            <label className="input-group">
+              <textarea
+                className="textarea textarea-bordered w-full"
+                name="description"
+                rows="5"
+                placeholder="Description"
+              ></textarea>
+            </label>
+          </div>
+        </div>
         <input
           type="submit"
-          value="Add Coffee"
+          value="Add Craft"
           className="btn btn-block bg-[#e35353] text-white hover:bg-[#e35353]"
         />
       </form>

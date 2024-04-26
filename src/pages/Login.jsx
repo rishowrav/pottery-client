@@ -1,5 +1,5 @@
 import { useForm } from "react-hook-form";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 
 import { IoEyeOutline, IoEyeOffOutline } from "react-icons/io5";
 import { useContext, useState } from "react";
@@ -10,6 +10,8 @@ import Swal from "sweetalert2";
 const Login = () => {
   const [toggle, setToggle] = useState(true);
   const { loginUser } = useContext(AuthContext);
+  const location = useLocation();
+  const navigate = useNavigate();
 
   // react hook form
   const {
@@ -22,8 +24,7 @@ const Login = () => {
   const onSubmit = ({ email, password }) => {
     // login user
     loginUser(email, password)
-      .then((result) => {
-        console.log(result.user);
+      .then(() => {
         Swal.fire({
           position: "top-end",
           icon: "success",
@@ -31,6 +32,7 @@ const Login = () => {
           showConfirmButton: false,
           timer: 1500,
         });
+        navigate(location.state || "/");
       })
       .catch((error) => {
         Swal.fire({

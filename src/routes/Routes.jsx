@@ -7,6 +7,7 @@ import AddCraft from "../pages/AddCraft";
 import Login from "../pages/Login";
 import Register from "../pages/Register";
 import PrivateRoute from "../privateRoute/PrivateRoute";
+import CardDetails from "../components/CardDetails";
 
 const router = createBrowserRouter([
   {
@@ -44,6 +45,14 @@ const router = createBrowserRouter([
       {
         path: "/register",
         element: <Register></Register>,
+      },
+      {
+        path: "/cardDetails",
+        element: (
+          <PrivateRoute>
+            <CardDetails></CardDetails>
+          </PrivateRoute>
+        ),
       },
     ],
   },

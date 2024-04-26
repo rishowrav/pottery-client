@@ -33,7 +33,7 @@ const AuthProvider = ({ children }) => {
         setUser(user);
         setLoading(false);
       } else {
-        console.log("user not found ----- ami disi");
+        setLoading(false);
       }
 
       return () => unsubscribe();
