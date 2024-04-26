@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 
 import { IoEyeOutline, IoEyeOffOutline } from "react-icons/io5";
 import { useState } from "react";
+import { Helmet } from "react-helmet";
 
 const Login = () => {
   const [toggle, setToggle] = useState(true);
@@ -22,6 +23,9 @@ const Login = () => {
 
   return (
     <div className="mt-6" data-aos="fade-up" data-aos-duration="1000">
+      <Helmet>
+        <title>Pottery | Login</title>
+      </Helmet>
       {/* login from */}
       <div className="w-full max-w-lg p-4 mx-auto rounded-md shadow sm:p-8 bg-base-200 ">
         <h2 className="mb-3 text-3xl font-semibold text-center">
