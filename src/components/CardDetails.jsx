@@ -1,7 +1,10 @@
 import { FaCheckCircle } from "react-icons/fa";
 import { IoLocationSharp } from "react-icons/io5";
+import { useLoaderData } from "react-router-dom";
 
 const CardDetails = () => {
+  const craft = useLoaderData();
+
   return (
     <div data-aos="fade-left" data-aos-duration="1000">
       <div className=" bg-base-200 mb-5 ">
@@ -13,10 +16,10 @@ const CardDetails = () => {
             data-aos-duration="1000"
           >
             <button className="btn btn-md text-xl text-white border-none rounded-sm bg-[#FF6647] hover:bg-[#FF6647]  absolute right-6 bottom-6 ">
-              For Status
+              {craft.stockStatus}
             </button>
             <img
-              src="/img/slide33.jpg"
+              src={craft.photoURL}
               alt=""
               className="block object-cover object-center w-full h-[400px] md:h-[500px] bg-gray-500"
             />
@@ -30,10 +33,10 @@ const CardDetails = () => {
               <dir className="flex justify-between flex-col sm:flex-row pl-0 items-center">
                 {/* title */}
                 <h2 className="md:text-4xl text-xl playfair-display-font font-[800] my-10 sm:w-2/3">
-                  Title
+                  {craft.item_name}
                 </h2>
                 <span className="rounded-xl font-bold bg-[#FF66471A] px-4 py-3 text-[#FF6647E6] md:text-base text-sm">
-                  segment_name
+                  {craft.subcatagoryName}
                 </span>
               </dir>
 
@@ -61,11 +64,7 @@ const CardDetails = () => {
               {/* description */}
               <p className="py-2">
                 <span className="font-bold text-[#FF6647]">Details:</span>{" "}
-                <span className="">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure
-                  dicta nobis mollitia possimus quis aperiam voluptatem in
-                  voluptates, provident nemo?
-                </span>
+                <span className="">{craft.description}</span>
               </p>
 
               <hr className="border border-[#FF664796] border-b-0 my-4 mt-3" />
@@ -102,7 +101,7 @@ const CardDetails = () => {
                 <div className="bg-[#FF66471A] sm:bg-transparent px-4 sm:p-0 py-3 w-full sm:w-auto">
                   <span className="font-bold ">Price: </span>
                   <span className="font-bold text-3xl md:text-5xl text-[#FF6647]">
-                    $200
+                    ${craft.price}
                   </span>
                 </div>
               </div>

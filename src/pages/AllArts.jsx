@@ -1,9 +1,7 @@
-import { useState } from "react";
 import { Link, useLoaderData } from "react-router-dom";
 
 const AllArts = () => {
-  const loaderData = useLoaderData();
-  const [crafts, setCrafts] = useState(loaderData);
+  const crafts = useLoaderData();
 
   return (
     <div className="overflow-x-auto space-y-6 mt-6">
@@ -33,9 +31,8 @@ const AllArts = () => {
               <td>${craft.price}</td>
               <td>{craft.stockStatus}</td>
               <td className="flex gap-2">
-                <Link to={`/crafts/${craft._id}`}>
-                  {" "}
-                  <button className="btn bg-[#E35353] btn-sm text-white rounded-none ">
+                <Link to={`/cardDetails/${craft._id}`}>
+                  <button className="btn bg-[#E35353] hover:bg-[#E35353] border-none btn-sm text-white rounded-none ">
                     View Details
                   </button>
                 </Link>

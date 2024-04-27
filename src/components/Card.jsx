@@ -3,16 +3,16 @@ import { IoLocationSharp } from "react-icons/io5";
 import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 
-const Card = () => {
+const Card = ({ craft }) => {
   return (
     <div className="card realNest-card rounded-none bg-base-200 hover:shadow-xl duration-300 cursor-pointer">
       <figure className="relative ">
         <button className="btn btn-sm text-white border-none rounded-sm bg-[#FF6647] hover:bg-[#FF6647]  absolute right-6 top-6 ">
-          For Status
+          {craft.stockStatus}
         </button>
         <div className="  w-full md:h-[280px] flex justify-center items-center  ">
           <img
-            src="img/slide44.jpg"
+            src={craft.photoURL}
             alt="Shoes"
             className="w-full h-full object-fill"
           />
@@ -26,7 +26,7 @@ const Card = () => {
           >
             Family
           </span>
-          <span className="text-md  font-bold">$111</span>
+          <span className="text-md  font-bold">${craft.price}</span>
         </div>
         <ul className="flex justify-between items-center text-sm">
           <li className="px-3 py-2 text-[#FF6647]  rounded-full flex items-center gap-1">
@@ -39,8 +39,8 @@ const Card = () => {
             <FaHome /> <span className="text-xs">21 sqft</span>
           </li>
         </ul>
-        <h2 className=" text-xl font-bold  ">title is ths tile</h2>
-        <p className=" text-md">segment_name</p>
+        <h2 className=" text-xl font-bold  ">{craft.item_name}</h2>
+        <p className=" text-md">{craft.subcatagoryName}</p>
 
         <hr className="border border-dashed my-2 mt-2" />
         <div className="flex justify-between items-center font-[500]">
@@ -62,6 +62,7 @@ const Card = () => {
 };
 
 export default Card;
+
 Card.propTypes = {
-  data: PropTypes.object,
+  craft: PropTypes.object,
 };

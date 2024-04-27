@@ -17,6 +17,7 @@ const router = createBrowserRouter([
       {
         index: true,
         element: <Home></Home>,
+        loader: () => fetch("http://localhost:3000/crafts"),
       },
       {
         path: "/allArts",
@@ -48,12 +49,14 @@ const router = createBrowserRouter([
         element: <Register></Register>,
       },
       {
-        path: "/cardDetails",
+        path: "/cardDetails/:id",
         element: (
           <PrivateRoute>
             <CardDetails></CardDetails>
           </PrivateRoute>
         ),
+        loader: ({ params }) =>
+          fetch(`http://localhost:3000/crafts/${params.id}`),
       },
     ],
   },
