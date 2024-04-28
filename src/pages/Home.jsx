@@ -4,6 +4,7 @@ import { useContext, useState } from "react";
 import CraftItemsSection from "../components/CraftItemsSection";
 import CraftCategoriesSection from "../components/CraftCategoriesSection";
 import { AuthContext } from "../authProvider/AuthProvider";
+import Team from "../components/Team";
 
 const Home = () => {
   const loaderData = useLoaderData();
@@ -28,6 +29,9 @@ const Home = () => {
 
       {/* craft category section */}
       <CraftCategoriesSection></CraftCategoriesSection>
+
+      {/* our team section */}
+      <Team></Team>
     </div>
   );
 };
