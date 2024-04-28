@@ -12,7 +12,7 @@ const Login = () => {
   const { loginUser } = useContext(AuthContext);
   const location = useLocation();
   const navigate = useNavigate();
-  const { googleLogin } = useContext(AuthContext);
+  const { googleLogin, githubLogin } = useContext(AuthContext);
 
   // react hook form
   const {
@@ -73,6 +73,32 @@ const Login = () => {
       });
   };
 
+  // github login
+  const handleGithub = () => {
+    githubLogin()
+      .then(() => {
+        Swal.fire({
+          position: "top-end",
+          icon: "success",
+          title: "Successfully Login With Github",
+          showConfirmButton: false,
+          timer: 1500,
+        });
+
+        navigate(location.state || "/");
+      })
+      .catch((error) => {
+        Swal.fire({
+          position: "top-end",
+          icon: "error",
+          title: "Something is wrong",
+          showConfirmButton: false,
+          timer: 1500,
+          html: `${error.message}`,
+        });
+      });
+  };
+
   return (
     <div className="mt-6" data-aos="fade-up" data-aos-duration="1000">
       <Helmet>
@@ -101,7 +127,9 @@ const Login = () => {
             </svg>
             <p>Login with Google</p>
           </button>
+          {/* login with github */}
           <button
+            onClick={handleGithub}
             aria-label="Login with GitHub"
             role="button"
             className="flex items-center justify-center w-full p-4 space-x-4 border rounded-md focus:ring-2 focus:ring-offset-1 border-gray-600 "
