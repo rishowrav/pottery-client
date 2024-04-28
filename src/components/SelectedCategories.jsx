@@ -1,5 +1,5 @@
 import { useLoaderData } from "react-router-dom";
-import Card from "./Card";
+import CardCategories from "./CardCategories";
 
 const SelectedCategories = () => {
   const loaderData = useLoaderData();
@@ -12,7 +12,7 @@ const SelectedCategories = () => {
 
       <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-5">
         {loaderData.map((data) => (
-          <Card key={data._id} craft={data}></Card>
+          <CardCategories key={data._id} craft={data}></CardCategories>
         ))}
       </div>
     </div>

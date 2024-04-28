@@ -1,46 +1,10 @@
+import { FiEdit3 } from "react-icons/fi";
+import { MdOutlineTimer } from "react-icons/md";
+import { FaStar } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
-import Swal from "sweetalert2";
-import { MdOutlineTimer } from "react-icons/md";
-import { FiEdit3 } from "react-icons/fi";
-import { FaStar } from "react-icons/fa6";
 
-const OwnCreateCraft = ({ craft, setUserCrafts, userCrafts }) => {
-  // delete method
-  const handleDelete = (id) => {
-    Swal.fire({
-      title: "Are you sure?",
-      text: "You won't be able to revert this!",
-      icon: "warning",
-      showCancelButton: true,
-      confirmButtonColor: "#3085d6",
-      cancelButtonColor: "#d33",
-      confirmButtonText: "Yes, delete it!",
-    }).then((result) => {
-      if (result.isConfirmed) {
-        fetch(`http://localhost:3000/crafts/${id}`, {
-          method: "DELETE",
-        })
-          .then((res) => res.json())
-          .then((data) => {
-            console.log(data);
-            if (data.deletedCount) {
-              const reamining = userCrafts.filter((craft) => craft._id !== id);
-              setUserCrafts(reamining);
-              Swal.fire({
-                title: "Deleted!",
-                text: "Your file has been deleted.",
-                icon: "success",
-              });
-            }
-          })
-          .catch((error) => {
-            console.log(error.message);
-          });
-      }
-    });
-  };
-
+const CardCategories = ({ craft }) => {
   return (
     <div className="card realNest-card rounded-none bg-base-200 hover:shadow-xl duration-300 cursor-pointer">
       <figure className="relative ">
@@ -84,25 +48,22 @@ const OwnCreateCraft = ({ craft, setUserCrafts, userCrafts }) => {
         <p className=" text-md">{craft.subcatagoryName}</p>
 
         <hr className="border border-dashed my-2 mt-2" />
-
+        {/* description */}
+        <p className="text-sm dark:text-gray-500 font-normal">
+          {craft.description.slice(0, 120)}...
+        </p>
+        <hr className="border border-dashed my-2 mt-2" />
         <div className="flex justify-between items-center font-[500]">
           <div className="flex items-center gap-1">
             <FaStar className="text-[#FF6647] text-2xl" />{" "}
             <span className="text-lg font-bold ">{craft.rating}.0</span>
           </div>
-          <div className=" space-x-3">
-            <Link to={`/craftUpdate/${craft._id}`}>
-              <button className="btn btn-md text-white   bg-[#FF6647]   rounded-sm  hover:bg-[#FF6647] border-none  ">
-                Update
+          <div className="">
+            <Link to={`/cardDetails/${craft._id}`}>
+              <button className="btn btn-md text-[#FF6647] hover:text-white duration-300 hover:border-[#FF6647] border-1  rounded-sm border-[#FF6647] bg-transparent  hover:bg-[#FF6647]  ">
+                View Details
               </button>
             </Link>
-
-            <button
-              onClick={() => handleDelete(craft._id)}
-              className="btn btn-md text-white   bg-[#FF6647]   rounded-sm  hover:bg-[#FF6647] border-none  "
-            >
-              Delete
-            </button>
           </div>
         </div>
       </div>
@@ -110,14 +71,8 @@ const OwnCreateCraft = ({ craft, setUserCrafts, userCrafts }) => {
   );
 };
 
-export default OwnCreateCraft;
-OwnCreateCraft.propTypes = {
-  craft: PropTypes.array,
-};
+export default CardCategories;
 
-OwnCreateCraft.propTypes = {
-  setUserCrafts: PropTypes.func,
-};
-OwnCreateCraft.propTypes = {
-  userCrafts: PropTypes.array,
+CardCategories.propTypes = {
+  craft: PropTypes.object,
 };
