@@ -40,7 +40,7 @@ const AddCraft = () => {
     console.log(newCraft);
 
     // send data to the server
-    fetch("http://localhost:3000/crafts", {
+    fetch("https://pottery-backend-server.vercel.app/crafts", {
       method: "POST",
       headers: {
         "content-type": "application/json",

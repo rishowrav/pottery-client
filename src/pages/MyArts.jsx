@@ -12,7 +12,9 @@ const MyArts = () => {
   // condision on customization
 
   useEffect(() => {
-    fetch(`http://localhost:3000/myArts/${user.email}/${allYesNo}`)
+    fetch(
+      `https://pottery-backend-server.vercel.app/myArts/${user.email}/${allYesNo}`
+    )
       .then((res) => res.json())
       .then((data) => {
         setUserCrafts(data);

@@ -44,7 +44,7 @@ const AuthProvider = ({ children }) => {
   const [allData, setAllData] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:3000/crafts")
+    fetch("https://pottery-backend-server.vercel.app/crafts")
       .then((res) => res.json())
       .then((data) => {
         setLoading(true);

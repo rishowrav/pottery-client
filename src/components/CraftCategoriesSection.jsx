@@ -5,7 +5,7 @@ const CraftCategoriesSection = () => {
   const [categories, setCategories] = useState([]);
 
   useEffect(() => {
-    fetch(`http://localhost:3000/categories/`)
+    fetch(`https://pottery-backend-server.vercel.app/categories/`)
       .then((res) => res.json())
       .then((data) => {
         console.log(data);

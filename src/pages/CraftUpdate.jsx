@@ -51,13 +51,16 @@ const CraftUpdate = () => {
       confirmButtonText: "Yes, Update it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:3000/craftUpdate/${loaderData._id}`, {
-          method: "PUT",
-          headers: {
-            "content-type": "application/json",
-          },
-          body: JSON.stringify(updateCraft),
-        })
+        fetch(
+          `https://pottery-backend-server.vercel.app/craftUpdate/${loaderData._id}`,
+          {
+            method: "PUT",
+            headers: {
+              "content-type": "application/json",
+            },
+            body: JSON.stringify(updateCraft),
+          }
+        )
           .then((res) => res.json())
           .then((data) => {
             if (data.modifiedCount) {

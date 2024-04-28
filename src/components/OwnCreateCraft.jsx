@@ -18,7 +18,7 @@ const OwnCreateCraft = ({ craft, setUserCrafts, userCrafts }) => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:3000/crafts/${id}`, {
+        fetch(`https://pottery-backend-server.vercel.app/crafts/${id}`, {
           method: "DELETE",
         })
           .then((res) => res.json())

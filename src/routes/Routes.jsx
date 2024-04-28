@@ -21,12 +21,12 @@ const router = createBrowserRouter([
       {
         index: true,
         element: <Home></Home>,
-        loader: () => fetch("http://localhost:3000/crafts"),
+        loader: () => fetch("https://pottery-backend-server.vercel.app/crafts"),
       },
       {
         path: "/allArts",
         element: <AllArts></AllArts>,
-        loader: () => fetch("http://localhost:3000/crafts"),
+        loader: () => fetch("https://pottery-backend-server.vercel.app/crafts"),
       },
       {
         path: "/myArts",
@@ -60,19 +60,25 @@ const router = createBrowserRouter([
           </PrivateRoute>
         ),
         loader: ({ params }) =>
-          fetch(`http://localhost:3000/crafts/${params.id}`),
+          fetch(
+            `https://pottery-backend-server.vercel.app/crafts/${params.id}`
+          ),
       },
       {
         path: "/selectedCategories/:categorie",
         element: <SelectedCategories></SelectedCategories>,
         loader: ({ params }) =>
-          fetch(`http://localhost:3000/categories/${params.categorie}`),
+          fetch(
+            `https://pottery-backend-server.vercel.app/categories/${params.categorie}`
+          ),
       },
       {
         path: "/craftUpdate/:id",
         element: <CraftUpdate></CraftUpdate>,
         loader: ({ params }) =>
-          fetch(`http://localhost:3000/crafts/${params.id}`),
+          fetch(
+            `https://pottery-backend-server.vercel.app/crafts/${params.id}`
+          ),
       },
     ],
   },
