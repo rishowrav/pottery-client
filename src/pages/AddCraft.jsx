@@ -84,6 +84,8 @@ const AddCraft = () => {
               />
             </label>
           </div>
+
+          {/* Subcategory Name */}
           <div className="form-control md:w-1/2 ml-4">
             <label className="label">
               <span className="label-text">Subcategory Name</span>
@@ -96,18 +98,14 @@ const AddCraft = () => {
                 <option defaultValue="not select" disabled selected>
                   Select Subcategory Name
                 </option>
-                <option defaultValue="Clay-made pottery">
-                  Clay-made pottery
-                </option>
-                <option defaultValue="Stoneware">Stoneware</option>
-                <option defaultValue="Porcelain">Porcelain</option>
-                <option defaultValue="Terra Cotta">Terra Cotta</option>
-                <option defaultValue="Ceramics & Architectural">
+                <option value="ClayMadePottery">Clay-made pottery</option>
+                <option value="Stoneware">Stoneware</option>
+                <option value="Porcelain">Porcelain</option>
+                <option value="TerraCotta">Terra Cotta</option>
+                <option value="Ceramics&Architectural">
                   Ceramics & Architectural
                 </option>
-                <option defaultValue="Home decor pottery">
-                  Home decor pottery
-                </option>
+                <option value="HomeDecorPottery">Home decor pottery</option>
               </select>
             </label>
           </div>

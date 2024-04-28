@@ -5,6 +5,7 @@ import PropTypes from "prop-types";
 import Swal from "sweetalert2";
 
 const OwnCreateCraft = ({ craft, setUserCrafts, userCrafts }) => {
+  // delete method
   const handleDelete = (id) => {
     fetch(`http://localhost:3000/crafts/${id}`, {
       method: "DELETE",
