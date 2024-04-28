@@ -84,6 +84,10 @@ const OwnCreateCraft = ({ craft, setUserCrafts, userCrafts }) => {
         <p className=" text-md">{craft.subcatagoryName}</p>
 
         <hr className="border border-dashed my-2 mt-2" />
+        <p className="text-sm dark:text-gray-500 font-normal">
+          {craft.description.slice(0, 120)}...
+        </p>
+        <hr className="border border-dashed my-2 mt-2" />
         <div className="flex justify-between items-center font-[500]">
           <div className="flex items-center gap-1">
             <FaStar className="text-[#FF6647] text-2xl" />{" "}
