@@ -1,12 +1,14 @@
 import { useLoaderData } from "react-router-dom";
 import Slider from "../components/slider";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import CraftItemsSection from "../components/CraftItemsSection";
 import CraftCategoriesSection from "../components/CraftCategoriesSection";
+import { AuthContext } from "../authProvider/AuthProvider";
 
 const Home = () => {
   const loaderData = useLoaderData();
   const [crafts, setCrafts] = useState(loaderData.slice(0, 6));
+  const { loading, allData } = useContext(AuthContext);
 
   return (
     <div className="space-y-24 ">
@@ -14,11 +16,15 @@ const Home = () => {
       <Slider></Slider>
 
       {/* Craft Item  section */}
-      <CraftItemsSection
-        crafts={crafts}
-        setCrafts={setCrafts}
-        loaderData={loaderData}
-      ></CraftItemsSection>
+      {loading ? (
+        <h1 className="font-bold text-4xl text-center m-10">Loading...</h1>
+      ) : (
+        <CraftItemsSection
+          crafts={crafts}
+          setCrafts={setCrafts}
+          loaderData={allData}
+        ></CraftItemsSection>
+      )}
 
       {/* craft category section */}
       <CraftCategoriesSection></CraftCategoriesSection>

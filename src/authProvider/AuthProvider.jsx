@@ -40,7 +40,27 @@ const AuthProvider = ({ children }) => {
     });
   });
 
-  const dataInfo = { createUser, loginUser, user, setUser, loading };
+  // fetch all data to mongoDb
+  const [allData, setAllData] = useState([]);
+
+  useEffect(() => {
+    fetch("http://localhost:3000/crafts")
+      .then((res) => res.json())
+      .then((data) => {
+        setLoading(true);
+        setAllData(data);
+        setLoading(false);
+      });
+  }, []);
+
+  const dataInfo = {
+    createUser,
+    loginUser,
+    user,
+    setUser,
+    loading,
+    allData,
+  };
 
   return (
     <AuthContext.Provider value={dataInfo}>{children}</AuthContext.Provider>
