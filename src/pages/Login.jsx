@@ -12,6 +12,7 @@ const Login = () => {
   const { loginUser } = useContext(AuthContext);
   const location = useLocation();
   const navigate = useNavigate();
+  const { googleLogin } = useContext(AuthContext);
 
   // react hook form
   const {
@@ -46,6 +47,32 @@ const Login = () => {
       });
   };
 
+  // google login
+  const handleGoogle = () => {
+    googleLogin()
+      .then(() => {
+        Swal.fire({
+          position: "top-end",
+          icon: "success",
+          title: "Successfully Login With Google",
+          showConfirmButton: false,
+          timer: 1500,
+        });
+
+        navigate(location.state || "/");
+      })
+      .catch((error) => {
+        Swal.fire({
+          position: "top-end",
+          icon: "error",
+          title: "Something is wrong",
+          showConfirmButton: false,
+          timer: 1500,
+          html: `${error.message}`,
+        });
+      });
+  };
+
   return (
     <div className="mt-6" data-aos="fade-up" data-aos-duration="1000">
       <Helmet>
@@ -58,7 +85,9 @@ const Login = () => {
         </h2>
 
         <div className="my-6 space-y-4">
+          {/* login with google */}
           <button
+            onClick={handleGoogle}
             aria-label="Login with Google"
             type="button"
             className="flex items-center justify-center w-full p-4 space-x-4 border rounded-md focus:ring-2 focus:ring-offset-1 border-gray-600 "
