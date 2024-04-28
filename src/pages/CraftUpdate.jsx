@@ -1,12 +1,14 @@
-import { useContext } from "react";
+import { useLoaderData } from "react-router-dom";
 import { AuthContext } from "../authProvider/AuthProvider";
+import { useContext } from "react";
 import Swal from "sweetalert2";
 
-const AddCraft = () => {
+const CraftUpdate = () => {
+  const loaderData = useLoaderData();
   const { user } = useContext(AuthContext);
 
   // handle
-  const handleAddCraft = (event) => {
+  const handleUpdate = (event) => {
     event.preventDefault();
 
     const form = event.target;
@@ -23,7 +25,7 @@ const AddCraft = () => {
     const photoURL = form.photoURL.value;
     const description = form.description.value;
 
-    const newCraft = {
+    const updateCraft = {
       item_name,
       subcatagoryName,
       userEmail,
@@ -37,38 +39,43 @@ const AddCraft = () => {
       description,
     };
 
-    console.log(newCraft);
+    // update
 
-    // send data to the server
-    fetch("http://localhost:3000/crafts", {
-      method: "POST",
-      headers: {
-        "content-type": "application/json",
-      },
-      body: JSON.stringify(newCraft),
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        console.log(data);
-        if (data.insertedId) {
-          Swal.fire({
-            position: "top-end",
-            icon: "success",
-            title: "data successfully created",
-            showConfirmButton: false,
-            timer: 1500,
+    Swal.fire({
+      title: "Are you sure?",
+      text: "You won't be able to Update this!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, Update it!",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        fetch(`http://localhost:3000/craftUpdate/${loaderData._id}`, {
+          method: "PUT",
+          headers: {
+            "content-type": "application/json",
+          },
+          body: JSON.stringify(updateCraft),
+        })
+          .then((res) => res.json())
+          .then((data) => {
+            if (data.modifiedCount) {
+              Swal.fire({
+                title: "Updated!",
+                text: "Your file has been Updated.",
+                icon: "success",
+              });
+            }
           });
-        }
-      })
-      .catch((error) => {
-        console.log(error);
-      });
+      }
+    });
   };
 
   return (
     <div className="bg-base-200 p-24">
-      <h2 className="text-3xl font-extrabold">Add a Craft</h2>
-      <form onSubmit={handleAddCraft}>
+      <h2 className="text-3xl font-extrabold">Update a Craft</h2>
+      <form onSubmit={handleUpdate}>
         {/* Subcategory Name */}
         <div className="form-control  mb-4">
           <label className="label">
@@ -79,6 +86,7 @@ const AddCraft = () => {
               className="select select-bordered w-full "
               name="subcatagoryName"
               required
+              defaultValue={loaderData?.subcatagoryName}
             >
               <option disabled selected>
                 Select Subcategory Name
@@ -102,6 +110,7 @@ const AddCraft = () => {
             </label>
             <label className="input-group">
               <input
+                defaultValue={loaderData?.item_name}
                 required
                 type="text"
                 name="item_name"
@@ -120,6 +129,7 @@ const AddCraft = () => {
             </label>
             <label className="input-group">
               <textarea
+                defaultValue={loaderData?.description}
                 required
                 className="textarea textarea-bordered w-full"
                 name="description"
@@ -139,6 +149,7 @@ const AddCraft = () => {
             </label>
             <label className="input-group">
               <input
+                defaultValue={loaderData?.photoURL}
                 required
                 type="text"
                 name="photoURL"
@@ -155,6 +166,7 @@ const AddCraft = () => {
             </label>
             <label className="input-group">
               <input
+                defaultValue={loaderData.price}
                 required
                 type="text"
                 name="price"
@@ -174,6 +186,7 @@ const AddCraft = () => {
             </label>
             <label className="input-group">
               <select
+                defaultValue={loaderData.stockStatus}
                 required
                 className="select select-bordered w-full "
                 name="stockStatus"
@@ -194,6 +207,7 @@ const AddCraft = () => {
             </label>
             <label className="input-group">
               <select
+                defaultValue={loaderData.customization}
                 required
                 className="select select-bordered w-full "
                 name="customization"
@@ -215,6 +229,7 @@ const AddCraft = () => {
             </label>
             <label className="input-group">
               <select
+                defaultValue={loaderData.rating}
                 required
                 className="select select-bordered w-full "
                 name="rating"
@@ -236,6 +251,7 @@ const AddCraft = () => {
             </label>
             <label className="input-group">
               <select
+                defaultValue={loaderData.processingTime}
                 required
                 className="select select-bordered w-full "
                 name="processingTime"
@@ -289,7 +305,7 @@ const AddCraft = () => {
 
         <input
           type="submit"
-          value="Add Craft"
+          value="Update"
           className="btn btn-block bg-[#e35353] text-white hover:bg-[#e35353]"
         />
       </form>
@@ -297,4 +313,4 @@ const AddCraft = () => {
   );
 };
 
-export default AddCraft;
+export default CraftUpdate;

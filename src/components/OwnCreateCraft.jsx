@@ -8,27 +8,37 @@ import { FaStar } from "react-icons/fa6";
 const OwnCreateCraft = ({ craft, setUserCrafts, userCrafts }) => {
   // delete method
   const handleDelete = (id) => {
-    fetch(`http://localhost:3000/crafts/${id}`, {
-      method: "DELETE",
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        console.log(data);
-        if (data.deletedCount) {
-          const reamining = userCrafts.filter((craft) => craft._id !== id);
-          setUserCrafts(reamining);
-          Swal.fire({
-            position: "top-end",
-            icon: "success",
-            title: "Deleted Successfully",
-            showConfirmButton: false,
-            timer: 1500,
+    Swal.fire({
+      title: "Are you sure?",
+      text: "You won't be able to revert this!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, delete it!",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        fetch(`http://localhost:3000/crafts/${id}`, {
+          method: "DELETE",
+        })
+          .then((res) => res.json())
+          .then((data) => {
+            console.log(data);
+            if (data.deletedCount) {
+              const reamining = userCrafts.filter((craft) => craft._id !== id);
+              setUserCrafts(reamining);
+              Swal.fire({
+                title: "Deleted!",
+                text: "Your file has been deleted.",
+                icon: "success",
+              });
+            }
+          })
+          .catch((error) => {
+            console.log(error.message);
           });
-        }
-      })
-      .catch((error) => {
-        console.log(error.message);
-      });
+      }
+    });
   };
 
   return (
@@ -80,11 +90,12 @@ const OwnCreateCraft = ({ craft, setUserCrafts, userCrafts }) => {
             <span className="text-lg font-bold ">{craft.rating}.0</span>
           </div>
           <div className=" space-x-3">
-            <Link to={`/cardDetails/${craft._id}`}>
-              <button className="btn btn-md text-[#FF6647] hover:text-white duration-300 hover:border-[#FF6647] border-1  rounded-sm border-[#FF6647] bg-transparent  hover:bg-[#FF6647]  ">
-                View Details
+            <Link to={`/craftUpdate/${craft._id}`}>
+              <button className="btn btn-md text-white   bg-[#FF6647]   rounded-sm  hover:bg-[#FF6647] border-none  ">
+                Update
               </button>
             </Link>
+
             <button
               onClick={() => handleDelete(craft._id)}
               className="btn btn-md text-white   bg-[#FF6647]   rounded-sm  hover:bg-[#FF6647] border-none  "

@@ -9,6 +9,7 @@ import Register from "../pages/Register";
 import PrivateRoute from "../privateRoute/PrivateRoute";
 import CardDetails from "../components/CardDetails";
 import SelectedCategories from "../components/SelectedCategories";
+import CraftUpdate from "../pages/CraftUpdate";
 
 const router = createBrowserRouter([
   {
@@ -64,6 +65,12 @@ const router = createBrowserRouter([
         element: <SelectedCategories></SelectedCategories>,
         loader: ({ params }) =>
           fetch(`http://localhost:3000/categories/${params.categorie}`),
+      },
+      {
+        path: "/craftUpdate/:id",
+        element: <CraftUpdate></CraftUpdate>,
+        loader: ({ params }) =>
+          fetch(`http://localhost:3000/crafts/${params.id}`),
       },
     ],
   },
