@@ -69,9 +69,33 @@ const AddCraft = () => {
     <div className="bg-base-200 p-24">
       <h2 className="text-3xl font-extrabold">Add a Craft</h2>
       <form onSubmit={handleAddCraft}>
-        {/* form name and quantity row */}
-        <div className="md:flex mb-8">
-          <div className="form-control md:w-1/2">
+        {/* Subcategory Name */}
+        <div className="form-control  mb-4">
+          <label className="label">
+            <span className="label-text">Subcategory Name</span>
+          </label>
+          <label className="input-group">
+            <select
+              className="select select-bordered w-full "
+              name="subcatagoryName"
+            >
+              <option defaultValue="not select" disabled selected>
+                Select Subcategory Name
+              </option>
+              <option value="ClayMadePottery">Clay-made pottery</option>
+              <option value="Stoneware">Stoneware</option>
+              <option value="Porcelain">Porcelain</option>
+              <option value="TerraCotta">Terra Cotta</option>
+              <option value="Ceramics&Architectural">
+                Ceramics & Architectural
+              </option>
+              <option value="HomeDecorPottery">Home decor pottery</option>
+            </select>
+          </label>
+        </div>
+        {/* craft name row */}
+        <div className=" mb-4">
+          <div className="form-control ">
             <label className="label">
               <span className="label-text">Craft Name</span>
             </label>
@@ -84,67 +108,43 @@ const AddCraft = () => {
               />
             </label>
           </div>
+        </div>
 
-          {/* Subcategory Name */}
-          <div className="form-control md:w-1/2 ml-4">
+        {/* Description row */}
+        <div className="mb-4">
+          <div className="form-control w-full">
             <label className="label">
-              <span className="label-text">Subcategory Name</span>
+              <span className="label-text">Description</span>
             </label>
             <label className="input-group">
-              <select
-                className="select select-bordered w-full "
-                name="subcatagoryName"
-              >
-                <option defaultValue="not select" disabled selected>
-                  Select Subcategory Name
-                </option>
-                <option value="ClayMadePottery">Clay-made pottery</option>
-                <option value="Stoneware">Stoneware</option>
-                <option value="Porcelain">Porcelain</option>
-                <option value="TerraCotta">Terra Cotta</option>
-                <option value="Ceramics&Architectural">
-                  Ceramics & Architectural
-                </option>
-                <option value="HomeDecorPottery">Home decor pottery</option>
-              </select>
+              <textarea
+                className="textarea textarea-bordered w-full"
+                name="description"
+                rows="2"
+                placeholder="Description"
+              ></textarea>
             </label>
           </div>
         </div>
-        {/* form supplier row */}
-        <div className="md:flex mb-8">
-          <div className="form-control md:w-1/2">
+
+        {/* form  row */}
+        <div className="md:flex mb-4 gap-4">
+          {/* photo url */}
+          <div className="form-control w-1/2">
             <label className="label">
-              <span className="label-text">User Email</span>
+              <span className="label-text">Photo URL</span>
             </label>
             <label className="input-group">
               <input
-                defaultValue={user?.email}
                 type="text"
-                name="userEmail"
-                placeholder="User Email"
+                name="photoURL"
+                placeholder="Photo URL"
                 className="input input-bordered w-full"
-                disabled
               />
             </label>
           </div>
-          <div className="form-control md:w-1/2 ml-4">
-            <label className="label">
-              <span className="label-text">User Name</span>
-            </label>
-            <label className="input-group">
-              <input
-                disabled
-                defaultValue={user?.displayName}
-                type="text"
-                name="userName"
-                placeholder="User Name"
-                className="input input-bordered w-full "
-              />
-            </label>
-          </div>
-        </div>
-        {/* form category and details row */}
-        <div className="md:flex mb-8">
+
+          {/* price */}
           <div className="form-control md:w-1/2">
             <label className="label">
               <span className="label-text">Price</span>
@@ -158,7 +158,12 @@ const AddCraft = () => {
               />
             </label>
           </div>
-          <div className="form-control md:w-1/2 ml-4">
+        </div>
+
+        {/* form  row */}
+        <div className="md:flex mb-4 gap-4">
+          {/* stock status */}
+          <div className="form-control md:w-1/2 ">
             <label className="label">
               <span className="label-text">Stock Status</span>
             </label>
@@ -175,9 +180,28 @@ const AddCraft = () => {
               </select>
             </label>
           </div>
+
+          {/* customization */}
+          <div className="form-control md:w-1/2">
+            <label className="label">
+              <span className="label-text">Customization</span>
+            </label>
+            <label className="input-group">
+              <select
+                className="select select-bordered w-full "
+                name="customization"
+              >
+                <option defaultValue="not select" disabled selected>
+                  Select Customization
+                </option>
+                <option defaultValue="No">No</option>
+                <option defaultValue="Yes">Yes</option>
+              </select>
+            </label>
+          </div>
         </div>
         {/* select row */}
-        <div className="md:flex mb-8">
+        <div className="md:flex mb-4 gap-4">
           <div className="form-control md:w-1/2">
             <label className="label">
               <span className="label-text">Rating</span>
@@ -195,7 +219,7 @@ const AddCraft = () => {
               </select>
             </label>
           </div>
-          <div className="form-control md:w-1/2 ml-4">
+          <div className="form-control md:w-1/2 ">
             <label className="label">
               <span className="label-text">Processing Time</span>
             </label>
@@ -216,58 +240,39 @@ const AddCraft = () => {
             </label>
           </div>
         </div>
-        {/* select row */}
-        <div className="md:flex mb-8">
+
+        {/* form userEmail and userName row */}
+        <div className="md:flex mb-8 gap-4">
           <div className="form-control md:w-1/2">
             <label className="label">
-              <span className="label-text">Customization</span>
-            </label>
-            <label className="input-group">
-              <select
-                className="select select-bordered w-full "
-                name="customization"
-              >
-                <option defaultValue="not select" disabled selected>
-                  Select Customization
-                </option>
-                <option defaultValue="No">No</option>
-                <option defaultValue="Yes">Yes</option>
-              </select>
-            </label>
-          </div>
-        </div>
-        {/* form Photo url row */}
-        <div className="mb-8">
-          <div className="form-control w-full">
-            <label className="label">
-              <span className="label-text">Photo URL</span>
+              <span className="label-text">User Email</span>
             </label>
             <label className="input-group">
               <input
+                defaultValue={user?.email}
                 type="text"
-                name="photoURL"
-                placeholder="Photo URL"
+                name="userEmail"
+                placeholder="User Email"
                 className="input input-bordered w-full"
               />
             </label>
           </div>
-        </div>
-        {/* Description row */}
-        <div className="mb-8">
-          <div className="form-control w-full">
+          <div className="form-control md:w-1/2 ">
             <label className="label">
-              <span className="label-text">Description</span>
+              <span className="label-text">User Name</span>
             </label>
             <label className="input-group">
-              <textarea
-                className="textarea textarea-bordered w-full"
-                name="description"
-                rows="5"
-                placeholder="Description"
-              ></textarea>
+              <input
+                defaultValue={user?.displayName}
+                type="text"
+                name="userName"
+                placeholder="User Name"
+                className="input input-bordered w-full "
+              />
             </label>
           </div>
         </div>
+
         <input
           type="submit"
           value="Add Craft"

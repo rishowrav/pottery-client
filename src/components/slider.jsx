@@ -31,7 +31,7 @@ const Slider = () => {
         className="mySwiper"
       >
         <SwiperSlide>
-          <div className="slider slider1 flex justify-center items-center z-0 bg-[linear-gradient(45deg,#00000080,#00000080),url('img/slide11.jpg')] h-[500px] bg-cover bg-center rounded-xl">
+          <div className="slider slider1 flex justify-center items-center z-0 bg-[linear-gradient(45deg,#00000080,#00000080),url('/img/slide11.jpg')] h-[500px] bg-cover bg-center rounded-xl">
             <div className="text-center text-white space-y-8">
               <h2 className="md:text-5xl text-4xl font-bold text-white capitalize  mx-auto w-4/5">
                 Your dream home is our top priority
@@ -50,7 +50,7 @@ const Slider = () => {
           </div>
         </SwiperSlide>
         <SwiperSlide>
-          <div className="slider slider1 flex justify-center items-center z-0 bg-[linear-gradient(45deg,#00000080,#00000080),url('img/slide22.jpg')] h-[500px] bg-cover bg-center rounded-xl">
+          <div className="slider slider1 flex justify-center items-center z-0 bg-[linear-gradient(45deg,#00000080,#00000080),url('/img/slide22.jpg')] h-[500px] bg-cover bg-center rounded-xl">
             <div className="text-center text-white space-y-8">
               <h2 className="md:text-5xl text-4xl font-bold text-white capitalize mx-auto w-4/5">
                 Your trusted partner in real estate
@@ -69,7 +69,7 @@ const Slider = () => {
           </div>
         </SwiperSlide>
         <SwiperSlide>
-          <div className="slider slider1 flex justify-center items-center z-0 bg-[linear-gradient(45deg,#00000099,#00000099),url('img/slide33.jpg')] h-[500px] bg-cover bg-center rounded-xl">
+          <div className="slider slider1 flex justify-center items-center z-0 bg-[linear-gradient(45deg,#00000099,#00000099),url('/img/slide33.jpg')] h-[500px] bg-cover bg-center rounded-xl">
             <div className="text-center text-white space-y-8">
               <h2 className="md:text-5xl text-4xl font-bold text-white capitalize mx-auto w-4/5">
                 Buy, sell, and rent with confidence
@@ -88,7 +88,7 @@ const Slider = () => {
           </div>
         </SwiperSlide>
         <SwiperSlide>
-          <div className="slider slider1 flex justify-center items-center z-0 bg-[linear-gradient(45deg,#00000099,#00000099),url('img/slide44.jpg')] h-[500px] bg-cover bg-center rounded-xl">
+          <div className="slider slider1 flex justify-center items-center z-0 bg-[linear-gradient(45deg,#00000099,#00000099),url('/img/slide44.jpg')] h-[500px] bg-cover bg-center rounded-xl">
             <div className="text-center text-white space-y-8">
               <h2 className="md:text-5xl text-4xl font-bold text-white capitalize mx-auto w-4/5">
                 Buy, sell, and rent with confidence

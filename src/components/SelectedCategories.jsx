@@ -7,10 +7,10 @@ const SelectedCategories = () => {
   return (
     <div>
       <h2 className="text-4xl font-bold text-center mb-10 mt-4">
-        Selected Categoried{" "}
+        Selected Categoried - {loaderData.length}
       </h2>
 
-      <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-3 gap-5">
+      <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-5">
         {loaderData.map((data) => (
           <Card key={data._id} craft={data}></Card>
         ))}

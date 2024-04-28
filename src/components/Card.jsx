@@ -1,5 +1,6 @@
-import { FaBath, FaBed, FaHome } from "react-icons/fa";
-import { IoLocationSharp } from "react-icons/io5";
+import { FiEdit3 } from "react-icons/fi";
+import { MdOutlineTimer } from "react-icons/md";
+import { FaStar } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 
@@ -31,13 +32,16 @@ const Card = ({ craft }) => {
         </div>
         <ul className="flex justify-between items-center text-sm">
           <li className="px-3 py-2 text-[#FF6647]  rounded-full flex items-center gap-1">
-            <FaBed /> <span className="text-xs">44 Bed</span>
+            <MdOutlineTimer />{" "}
+            <span className="text-xs">
+              Processing Time: {craft.processingTime}
+            </span>
           </li>
           <li className="px-3 py-2 text-[#FF6647]  rounded-full flex items-center gap-1">
-            <FaBath /> <span className="text-xs">32 Bath</span>
-          </li>
-          <li className="px-3 py-2 text-[#FF6647]  rounded-full flex items-center gap-1">
-            <FaHome /> <span className="text-xs">21 sqft</span>
+            <FiEdit3 />{" "}
+            <span className="text-xs">
+              Customization: {craft.customization}
+            </span>
           </li>
         </ul>
         <h2 className=" text-xl font-bold  ">{craft.item_name}</h2>
@@ -46,8 +50,8 @@ const Card = ({ craft }) => {
         <hr className="border border-dashed my-2 mt-2" />
         <div className="flex justify-between items-center font-[500]">
           <div className="flex items-center gap-1">
-            <IoLocationSharp className="text-[#FF6647] text-xl" />{" "}
-            <span className="text-sm ">location</span>
+            <FaStar className="text-[#FF6647] text-2xl" />{" "}
+            <span className="text-lg font-bold ">{craft.rating}.0</span>
           </div>
           <div className="">
             <Link to={`/cardDetails/${craft._id}`}>

@@ -84,7 +84,7 @@ const Navbar = () => {
           to="/"
           className="btn btn-ghost text-xl pl-0 w-[150px] hover:bg-transparent"
         >
-          <img className="" src="img/logo.png" alt="" />
+          <img className="" src="/img/logo.png" alt="" />
         </Link>
       </div>
       <div className="navbar-center hidden lg:flex">
