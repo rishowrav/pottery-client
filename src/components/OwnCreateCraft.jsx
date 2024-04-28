@@ -3,7 +3,7 @@ import { IoLocationSharp } from "react-icons/io5";
 import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 
-const Card = ({ craft }) => {
+const OwnCreateCraft = ({ craft }) => {
   return (
     <div className="card realNest-card rounded-none bg-base-200 hover:shadow-xl duration-300 cursor-pointer">
       <figure className="relative ">
@@ -62,8 +62,7 @@ const Card = ({ craft }) => {
   );
 };
 
-export default Card;
-
-Card.propTypes = {
-  craft: PropTypes.object,
+export default OwnCreateCraft;
+OwnCreateCraft.propTypes = {
+  craft: PropTypes.array,
 };

@@ -14,7 +14,7 @@ const Home = () => {
 
       {/* card section */}
       <div className="space-y-10">
-        <div className="text-center text-gray-700 space-y-2">
+        <div className="text-center space-y-2">
           <h2 className="text-4xl font-bold">
             Craft Items Section {crafts.length}
           </h2>
