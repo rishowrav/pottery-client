@@ -1,6 +1,6 @@
 import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../authProvider/AuthProvider";
-import Card from "../components/Card";
+import OwnCreateCraft from "../components/OwnCreateCraft";
 
 const MyArts = () => {
   const { user } = useContext(AuthContext);
@@ -20,10 +20,17 @@ const MyArts = () => {
 
   return (
     <div>
-      <h1>My Arts</h1>
+      <h2 className="text-5xl font-bold text-center mb-10 mt-6">
+        My Arts - {userCrafts.length}
+      </h2>
       <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-5">
         {userCrafts.map((craft) => (
-          <Card key={craft._id} craft={craft}></Card>
+          <OwnCreateCraft
+            key={craft._id}
+            craft={craft}
+            userCrafts={userCrafts}
+            setUserCrafts={setUserCrafts}
+          ></OwnCreateCraft>
         ))}
       </div>
     </div>

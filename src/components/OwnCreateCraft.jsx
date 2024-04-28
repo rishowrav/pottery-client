@@ -2,8 +2,33 @@ import { FaBath, FaBed, FaHome } from "react-icons/fa";
 import { IoLocationSharp } from "react-icons/io5";
 import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
+import Swal from "sweetalert2";
 
-const OwnCreateCraft = ({ craft }) => {
+const OwnCreateCraft = ({ craft, setUserCrafts, userCrafts }) => {
+  const handleDelete = (id) => {
+    fetch(`http://localhost:3000/crafts/${id}`, {
+      method: "DELETE",
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        if (data.deletedCount) {
+          const reamining = userCrafts.filter((craft) => craft._id !== id);
+          setUserCrafts(reamining);
+          Swal.fire({
+            position: "top-end",
+            icon: "success",
+            title: "Deleted Successfully",
+            showConfirmButton: false,
+            timer: 1500,
+          });
+        }
+      })
+      .catch((error) => {
+        console.log(error.message);
+      });
+  };
+
   return (
     <div className="card realNest-card rounded-none bg-base-200 hover:shadow-xl duration-300 cursor-pointer">
       <figure className="relative ">
@@ -49,12 +74,18 @@ const OwnCreateCraft = ({ craft }) => {
             <IoLocationSharp className="text-[#FF6647] text-xl" />{" "}
             <span className="text-sm ">location</span>
           </div>
-          <div className="">
-            <Link to={`/cardDetails/`}>
+          <div className=" space-x-3">
+            <Link to={`/cardDetails/${craft._id}`}>
               <button className="btn btn-md text-[#FF6647] hover:text-white duration-300 hover:border-[#FF6647] border-1  rounded-sm border-[#FF6647] bg-transparent  hover:bg-[#FF6647]  ">
                 View Details
               </button>
             </Link>
+            <button
+              onClick={() => handleDelete(craft._id)}
+              className="btn btn-md text-white   bg-[#FF6647]   rounded-sm  hover:bg-[#FF6647] border-none  "
+            >
+              Delete
+            </button>
           </div>
         </div>
       </div>
@@ -65,4 +96,11 @@ const OwnCreateCraft = ({ craft }) => {
 export default OwnCreateCraft;
 OwnCreateCraft.propTypes = {
   craft: PropTypes.array,
+};
+
+OwnCreateCraft.propTypes = {
+  setUserCrafts: PropTypes.func,
+};
+OwnCreateCraft.propTypes = {
+  userCrafts: PropTypes.array,
 };

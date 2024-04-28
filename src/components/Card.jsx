@@ -50,7 +50,7 @@ const Card = ({ craft }) => {
             <span className="text-sm ">location</span>
           </div>
           <div className="">
-            <Link to={`/cardDetails/`}>
+            <Link to={`/cardDetails/${craft._id}`}>
               <button className="btn btn-md text-[#FF6647] hover:text-white duration-300 hover:border-[#FF6647] border-1  rounded-sm border-[#FF6647] bg-transparent  hover:bg-[#FF6647]  ">
                 View Details
               </button>
