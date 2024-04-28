@@ -40,7 +40,7 @@ const OwnCreateCraft = ({ craft, setUserCrafts, userCrafts }) => {
           <img
             src={craft.photoURL}
             alt="Shoes"
-            className="w-full h-full object-fill"
+            className="w-full h-full object-cover"
           />
         </div>
       </figure>

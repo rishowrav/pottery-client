@@ -1,19 +1,24 @@
 import { Link } from "react-router-dom";
+import PropTypes from "prop-types";
 
-const Categories = () => {
+const Categories = ({ categorie }) => {
   return (
-    <div>
-      <Link>
-        <div className="slider slider1 flex justify-center items-center z-0 bg-[linear-gradient(45deg,#00000080,#00000080),url('img/slide22.jpg')] h-[250px] bg-cover bg-center rounded-xl">
+    <Link to={`/selectedCategories/${categorie?.subcatagoryName}`}>
+      <div>
+        <div className="flex justify-center items-center z-0 bg-[linear-gradient(45deg,#000000B3,#000000B3),url('img/slide33.jpg')] h-[250px] bg-cover bg-center rounded-none">
           <div className="text-center text-white space-y-8">
-            <h2 className="md:text-4xl text-4xl font-bold text-white capitalize  mx-auto w-4/5">
-              Categories
+            <h2 className="md:text-3xl text-3xl font-bold text-white capitalize ">
+              {categorie?.name}
             </h2>
           </div>
         </div>
-      </Link>
-    </div>
+      </div>
+    </Link>
   );
 };
 
 export default Categories;
+
+Categories.propTypes = {
+  categorie: PropTypes.object,
+};

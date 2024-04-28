@@ -8,6 +8,7 @@ import Login from "../pages/Login";
 import Register from "../pages/Register";
 import PrivateRoute from "../privateRoute/PrivateRoute";
 import CardDetails from "../components/CardDetails";
+import SelectedCategories from "../components/SelectedCategories";
 
 const router = createBrowserRouter([
   {
@@ -57,6 +58,12 @@ const router = createBrowserRouter([
         ),
         loader: ({ params }) =>
           fetch(`http://localhost:3000/crafts/${params.id}`),
+      },
+      {
+        path: "/selectedCategories/:categorie",
+        element: <SelectedCategories></SelectedCategories>,
+        loader: ({ params }) =>
+          fetch(`http://localhost:3000/categories/${params.categorie}`),
       },
     ],
   },
