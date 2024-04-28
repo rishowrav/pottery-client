@@ -15,7 +15,7 @@ const CardDetails = () => {
             data-aos="fade-left"
             data-aos-duration="1000"
           >
-            <button className="btn btn-md text-xl text-white border-none rounded-sm bg-[#FF6647] hover:bg-[#FF6647]  absolute right-6 bottom-6 ">
+            <button className="btn btn-md text-xl text-white border-none rounded-sm bg-[#E35353] hover:bg-[#E35353]  absolute right-6 bottom-6 ">
               {craft.stockStatus}
             </button>
             <img
@@ -35,47 +35,47 @@ const CardDetails = () => {
                 <h2 className="md:text-4xl text-xl playfair-display-font font-[800] my-10 sm:w-2/3">
                   {craft.item_name}
                 </h2>
-                <span className="rounded-xl font-bold bg-[#FF66471A] px-4 py-3 text-[#FF6647E6] md:text-base text-sm">
+                <span className="rounded-xl font-bold bg-[#E353531A] px-4 py-3 text-[#E35353E6] md:text-base text-sm">
                   {craft.subcatagoryName}
                 </span>
               </dir>
 
-              <hr className="border border-[#FF664796] border-b-0 my-4 mt-3" />
+              <hr className="border border-[#E3535396] border-b-0 my-4 mt-3" />
               {/* facilites */}
-              <p className="font-bold bg-[#FF66471A] px-4 py-3 text-[#FF6647]">
+              <p className="font-bold bg-[#E353531A] px-4 py-3 text-[#E35353]">
                 Facilitices
               </p>
               <ul className="ml-6">
                 <li className="flex items-center gap-2">
-                  <FaCheckCircle className="text-[#FF6647E6]" />{" "}
+                  <FaCheckCircle className="text-[#E35353E6]" />{" "}
                   <span>Fac</span>
                 </li>
                 <li className="flex items-center gap-2">
-                  <FaCheckCircle className="text-[#FF6647E6]" />{" "}
+                  <FaCheckCircle className="text-[#E35353E6]" />{" "}
                   <span>Fac</span>
                 </li>
                 <li className="flex items-center gap-2">
-                  <FaCheckCircle className="text-[#FF6647E6]" />{" "}
+                  <FaCheckCircle className="text-[#E35353E6]" />{" "}
                   <span>Fac</span>
                 </li>
               </ul>
-              <hr className="border border-[#FF664796] border-b-0 my-4 mt-3" />
+              <hr className="border border-[#E3535396] border-b-0 my-4 mt-3" />
 
               {/* description */}
               <p className="py-2">
-                <span className="font-bold text-[#FF6647]">Details:</span>{" "}
+                <span className="font-bold text-[#E35353]">Details:</span>{" "}
                 <span className="">{craft.description}</span>
               </p>
 
-              <hr className="border border-[#FF664796] border-b-0 my-4 mt-3" />
+              <hr className="border border-[#E3535396] border-b-0 my-4 mt-3" />
 
               {/* Location */}
               <div className="flex items-center gap-2">
-                <IoLocationSharp className="text-[#FF6647] text-xl" />{" "}
+                <IoLocationSharp className="text-[#E35353] text-xl" />{" "}
                 <span className="text-md ">Location</span>
               </div>
 
-              <hr className="border border-[#FF664796] border-b-0 my-4 mt-3" />
+              <hr className="border border-[#E3535396] border-b-0 my-4 mt-3" />
 
               {/* table and price */}
               <div className="pt-2 flex justify-between flex-col gap-10 sm:flex-row items-center  mx-2">
@@ -98,9 +98,9 @@ const CardDetails = () => {
                     </tr>
                   </tbody>
                 </table>
-                <div className="bg-[#FF66471A] sm:bg-transparent px-4 sm:p-0 py-3 w-full sm:w-auto">
+                <div className="bg-[#E353531A] sm:bg-transparent px-4 sm:p-0 py-3 w-full sm:w-auto">
                   <span className="font-bold ">Price: </span>
-                  <span className="font-bold text-3xl md:text-5xl text-[#FF6647]">
+                  <span className="font-bold text-3xl md:text-5xl text-[#E35353]">
                     ${craft.price}
                   </span>
                 </div>
@@ -108,9 +108,9 @@ const CardDetails = () => {
             </div>
             {/* end */}
 
-            <hr className="border border-[#FF664796] border-b-0 my-4 mt-3" />
+            <hr className="border border-[#E3535396] border-b-0 my-4 mt-3" />
             <div className="flex justify-end">
-              <button className="btn btn-sm md:btn-md lg:btn-lg hover:text-[#FF6647] text-white duration-300 border-[#FF6647] border-1  rounded-sm hover:border-[#FF6647] hover:bg-transparent  bg-[#FF6647]  ">
+              <button className="btn btn-sm md:btn-md lg:btn-lg hover:text-[#E35353] text-white duration-300 border-[#E35353] border-1  rounded-sm hover:border-[#E35353] hover:bg-transparent  bg-[#E35353]  ">
                 Book Now
               </button>
             </div>

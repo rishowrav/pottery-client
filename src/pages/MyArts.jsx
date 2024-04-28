@@ -32,17 +32,17 @@ const MyArts = () => {
       {/* filter button */}
       <div className="flex justify-end">
         <details className="dropdown">
-          <summary className="mb-10 btn bg-[#FF6647] border-none hover:bg-[#FF6647] text-white rounded-md btn-md px-4 pl-7">
+          <summary className="mb-10 btn bg-[#E35353] border-none hover:bg-[#E35353] text-white rounded-md btn-md px-4 pl-7">
             {`Customization (filter)`} <IoIosArrowDown className="text-2xl" />
           </summary>
           <ul className="p-2 shadow menu dropdown-content z-[1] bg-base-100 rounded-box w-52">
-            <li className="hover:bg-[#FF6647] hover:text-white rounded-lg">
+            <li className="hover:bg-[#E35353] hover:text-white rounded-lg">
               <a onClick={() => setAllYesNo("")}>All</a>
             </li>
-            <li className="hover:bg-[#FF6647] hover:text-white rounded-lg">
+            <li className="hover:bg-[#E35353] hover:text-white rounded-lg">
               <a onClick={() => setAllYesNo("Yes")}>Yes</a>
             </li>
-            <li className="hover:bg-[#FF6647] hover:text-white rounded-lg">
+            <li className="hover:bg-[#E35353] hover:text-white rounded-lg">
               <a onClick={() => setAllYesNo("No")}>No</a>
             </li>
           </ul>

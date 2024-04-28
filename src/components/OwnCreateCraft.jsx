@@ -44,7 +44,7 @@ const OwnCreateCraft = ({ craft, setUserCrafts, userCrafts }) => {
   return (
     <div className="card realNest-card rounded-none bg-base-200 hover:shadow-xl duration-300 cursor-pointer">
       <figure className="relative ">
-        <button className="btn btn-sm text-white border-none rounded-sm bg-[#FF6647] hover:bg-[#FF6647]  absolute right-6 top-6 ">
+        <button className="btn btn-sm text-white border-none rounded-sm bg-[#E35353] hover:bg-[#E35353]  absolute right-6 top-6 ">
           {craft.stockStatus}
         </button>
         <div className="  w-full md:h-[280px] flex justify-center items-center  ">
@@ -67,13 +67,13 @@ const OwnCreateCraft = ({ craft, setUserCrafts, userCrafts }) => {
           <span className="text-md  font-bold">${craft.price}</span>
         </div>
         <ul className="flex justify-between items-center text-sm">
-          <li className="px-3 py-2 text-[#FF6647]  rounded-full flex items-center gap-1">
+          <li className="px-3 py-2 text-[#E35353]  rounded-full flex items-center gap-1">
             <MdOutlineTimer />{" "}
             <span className="text-xs">
               Processing Time: {craft.processingTime}
             </span>
           </li>
-          <li className="px-3 py-2 text-[#FF6647]  rounded-full flex items-center gap-1">
+          <li className="px-3 py-2 text-[#E35353]  rounded-full flex items-center gap-1">
             <FiEdit3 />{" "}
             <span className="text-xs">
               Customization: {craft.customization}
@@ -87,19 +87,19 @@ const OwnCreateCraft = ({ craft, setUserCrafts, userCrafts }) => {
 
         <div className="flex justify-between items-center font-[500]">
           <div className="flex items-center gap-1">
-            <FaStar className="text-[#FF6647] text-2xl" />{" "}
+            <FaStar className="text-[#E35353] text-2xl" />{" "}
             <span className="text-lg font-bold ">{craft.rating}.0</span>
           </div>
           <div className=" space-x-3">
             <Link to={`/craftUpdate/${craft._id}`}>
-              <button className="btn btn-md text-white   bg-[#FF6647]   rounded-sm  hover:bg-[#FF6647] border-none  ">
+              <button className="btn btn-md text-white   bg-[#E35353]   rounded-sm  hover:bg-[#E35353] border-none  ">
                 Update
               </button>
             </Link>
 
             <button
               onClick={() => handleDelete(craft._id)}
-              className="btn btn-md text-white   bg-[#FF6647]   rounded-sm  hover:bg-[#FF6647] border-none  "
+              className="btn btn-md text-white   bg-[#E35353]   rounded-sm  hover:bg-[#E35353] border-none  "
             >
               Delete
             </button>

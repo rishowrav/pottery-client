@@ -5,6 +5,7 @@ import CraftItemsSection from "../components/CraftItemsSection";
 import CraftCategoriesSection from "../components/CraftCategoriesSection";
 import { AuthContext } from "../authProvider/AuthProvider";
 import Team from "../components/Team";
+import Feature from "../components/Feature";
 
 const Home = () => {
   const loaderData = useLoaderData();
@@ -29,6 +30,9 @@ const Home = () => {
 
       {/* craft category section */}
       <CraftCategoriesSection></CraftCategoriesSection>
+
+      {/* feature section */}
+      <Feature></Feature>
 
       {/* our team section */}
       <Team></Team>

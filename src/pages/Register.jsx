@@ -183,7 +183,7 @@ const Register = () => {
             to="/login"
             href="#"
             rel="noopener noreferrer"
-            className="focus:underline hover:underline text-[#FF6647]  font-bold"
+            className="focus:underline hover:underline text-[#E35353]  font-bold"
           >
             Login
           </Link>{" "}

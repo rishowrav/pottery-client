@@ -17,18 +17,19 @@ const CraftCategoriesSection = () => {
   }, []);
 
   return (
-    <div className="space-y-16">
-      <div className="text-center space-y-2">
-        <h2 className="text-4xl font-bold">
+    <div className="space-y-16 p-16 pt-20 bg-base-200">
+      <div className="space-y-4">
+        <h3 className="text-2xl font-bold leading-none sm:text-5xl">
           Explore Other Mediums - {categories.length}
-        </h2>
-        <p className="text-lg w-3/4 mx-auto">
+        </h3>
+        <p className="max-w-2xl ">
           The Crucible is the largest industrial arts nonprofit in the country,
           where we offer classes and studio time in 19+ areas. In these guides,
           we break down our studio areas and focus on sharing the knowledge of
           our instructors with you
         </p>
       </div>
+
       <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-5">
         {categories.map((categorie) => (
           <Categories key={categorie._id} categorie={categorie}></Categories>

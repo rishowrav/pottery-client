@@ -3,9 +3,9 @@ import PropTypes from "prop-types";
 
 const CraftItemsSection = ({ crafts, setCrafts, loaderData }) => {
   return (
-    <div className="space-y-10">
+    <div className="space-y-10 ">
       <div className="text-center space-y-2">
-        <h2 className="text-4xl font-bold">
+        <h2 className="text-5xl font-bold">
           Craft Items Section {crafts.length}
         </h2>
         <p className="text-lg w-2/3 mx-auto">

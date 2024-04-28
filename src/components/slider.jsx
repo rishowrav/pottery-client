@@ -25,8 +25,8 @@ const Slider = () => {
         navigation={true}
         modules={[Autoplay, Pagination, Navigation]}
         style={{
-          "--swiper-navigation-color": "#ff6647",
-          "--swiper-pagination-color": "#ff6647",
+          "--swiper-navigation-color": "#E35353",
+          "--swiper-pagination-color": "#E35353",
         }}
         className="mySwiper"
       >
@@ -42,8 +42,8 @@ const Slider = () => {
                 reality. Welcome home.
               </p>
               <div className="space-x-4">
-                <button className="btn font-bold text-white bg-[#ff6647] border-none hover:bg-[#ff6647]  rounded-md btn-lg">
-                  Book Now
+                <button className="btn font-bold text-white bg-[#E35353] border-none hover:bg-[#E35353]  rounded-md btn-lg">
+                  Buy Now
                 </button>
               </div>
             </div>
@@ -61,8 +61,8 @@ const Slider = () => {
                 step of your property journey.
               </p>
               <div className="space-x-4">
-                <button className="btn font-bold text-white bg-[#ff6647] border-none hover:bg-[#ff6647]  rounded-md btn-lg">
-                  Book Now
+                <button className="btn font-bold text-white bg-[#E35353] border-none hover:bg-[#E35353]  rounded-md btn-lg">
+                  Buy Now
                 </button>
               </div>
             </div>
@@ -80,8 +80,8 @@ const Slider = () => {
                 letting you move forward with confidence.
               </p>
               <div className="space-x-4">
-                <button className="btn font-bold text-white bg-[#ff6647] border-none hover:bg-[#ff6647]  rounded-md btn-lg">
-                  Book Now
+                <button className="btn font-bold text-white bg-[#E35353] border-none hover:bg-[#E35353]  rounded-md btn-lg">
+                  Buy Now
                 </button>
               </div>
             </div>
@@ -99,8 +99,8 @@ const Slider = () => {
                 letting you move forward with confidence.
               </p>
               <div className="space-x-4">
-                <button className="btn font-bold text-white bg-[#ff6647] border-none hover:bg-[#ff6647]  rounded-md btn-lg">
-                  Book Now
+                <button className="btn font-bold text-white bg-[#E35353] border-none hover:bg-[#E35353]  rounded-md btn-lg">
+                  Buy Now
                 </button>
               </div>
             </div>

@@ -6,7 +6,7 @@ const Team = () => {
           <h3 className="text-2xl font-bold leading-none sm:text-5xl">
             Meet our team
           </h3>
-          <p className="max-w-2xl dark:text-gray-600">
+          <p className="max-w-2xl ">
             At a assumenda quas cum earum ut itaque commodi saepe rem aspernatur
             quam natus quis nihil quod, hic explicabo doloribus magnam neque,
             exercitationem eius sunt!
