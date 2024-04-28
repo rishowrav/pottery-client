@@ -34,12 +34,13 @@ const Slider = () => {
           <div className="slider slider1 flex justify-center items-center z-0 bg-[linear-gradient(45deg,#00000080,#00000080),url('/img/slide11.jpg')] h-[500px] bg-cover bg-center rounded-xl">
             <div className="text-center text-white space-y-8">
               <h2 className="md:text-5xl text-4xl font-bold text-white capitalize  mx-auto w-4/5">
-                Your dream home is our top priority
+                Rustic Stoneware
               </h2>
               <p className="lg:w-2/3 mx-auto w-4/5">
-                Crafting your dream home is our foremost commitment. From design
-                to completion, we prioritize making your vision a stunning
-                reality. Welcome home.
+                Our rustic stoneware collection is an exciting range of handmade
+                tableware and accessories. We have taken the simplicity and
+                authenticity of studio style pottery, to create a range that is
+                affordable for home
               </p>
               <div className="space-x-4">
                 <button className="btn font-bold text-white bg-[#E35353] border-none hover:bg-[#E35353]  rounded-md btn-lg">
@@ -53,12 +54,13 @@ const Slider = () => {
           <div className="slider slider1 flex justify-center items-center z-0 bg-[linear-gradient(45deg,#00000080,#00000080),url('/img/slide22.jpg')] h-[500px] bg-cover bg-center rounded-xl">
             <div className="text-center text-white space-y-8">
               <h2 className="md:text-5xl text-4xl font-bold text-white capitalize mx-auto w-4/5">
-                Your trusted partner in real estate
+                Porcelain Patterned Wall & Floor Tile
               </h2>
               <p className="lg:w-2/3 mx-auto w-4/5">
-                Count on us as your reliable real estate ally. With our
-                expertise and dedication, we guide you seamlessly through every
-                step of your property journey.
+                The field tile offers a modern twist to classic old-world
+                European elegance. In muted black and chalky white tones, this
+                unique patterned tile features a star constructed of geometric
+                shapes at its center
               </p>
               <div className="space-x-4">
                 <button className="btn font-bold text-white bg-[#E35353] border-none hover:bg-[#E35353]  rounded-md btn-lg">
@@ -72,31 +74,12 @@ const Slider = () => {
           <div className="slider slider1 flex justify-center items-center z-0 bg-[linear-gradient(45deg,#00000099,#00000099),url('/img/slide33.jpg')] h-[500px] bg-cover bg-center rounded-xl">
             <div className="text-center text-white space-y-8">
               <h2 className="md:text-5xl text-4xl font-bold text-white capitalize mx-auto w-4/5">
-                Buy, sell, and rent with confidence
+                Keilson Ceramic Pot Planter
               </h2>
               <p className="lg:w-2/3 mx-auto w-4/5">
-                Empower your property endeavors with assurance. Whether buying,
-                selling, or renting, our expertise ensures a seamless process,
-                letting you move forward with confidence.
-              </p>
-              <div className="space-x-4">
-                <button className="btn font-bold text-white bg-[#E35353] border-none hover:bg-[#E35353]  rounded-md btn-lg">
-                  Buy Now
-                </button>
-              </div>
-            </div>
-          </div>
-        </SwiperSlide>
-        <SwiperSlide>
-          <div className="slider slider1 flex justify-center items-center z-0 bg-[linear-gradient(45deg,#00000099,#00000099),url('/img/slide44.jpg')] h-[500px] bg-cover bg-center rounded-xl">
-            <div className="text-center text-white space-y-8">
-              <h2 className="md:text-5xl text-4xl font-bold text-white capitalize mx-auto w-4/5">
-                Buy, sell, and rent with confidence
-              </h2>
-              <p className="lg:w-2/3 mx-auto w-4/5">
-                Empower your property endeavors with assurance. Whether buying,
-                selling, or renting, our expertise ensures a seamless process,
-                letting you move forward with confidence.
+                The Keilson Ceramic Pot Planter is a stylish vessel for indoor
+                plants, crafted with durable ceramic material, enhancing any
+                home decor.
               </p>
               <div className="space-x-4">
                 <button className="btn font-bold text-white bg-[#E35353] border-none hover:bg-[#E35353]  rounded-md btn-lg">

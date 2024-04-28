@@ -20,13 +20,12 @@ const CraftCategoriesSection = () => {
     <div className="space-y-16 p-16 pt-20 bg-base-200">
       <div className="space-y-4">
         <h3 className="text-2xl font-bold leading-none sm:text-5xl">
-          Explore Other Mediums - {categories.length}
+          Explore Other Catagories
         </h3>
         <p className="max-w-2xl ">
-          The Crucible is the largest industrial arts nonprofit in the country,
-          where we offer classes and studio time in 19+ areas. In these guides,
-          we break down our studio areas and focus on sharing the knowledge of
-          our instructors with you
+          Browse through our diverse range of categories to discover more
+          exceptional products, each meticulously curated to meet your needs and
+          elevate your experience. Explore now!
         </p>
       </div>
 

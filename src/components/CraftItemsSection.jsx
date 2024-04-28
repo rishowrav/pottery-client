@@ -5,13 +5,11 @@ const CraftItemsSection = ({ crafts, setCrafts, loaderData }) => {
   return (
     <div className="space-y-10 ">
       <div className="text-center space-y-2">
-        <h2 className="text-5xl font-bold">
-          Craft Items Section {crafts.length}
-        </h2>
+        <h2 className="text-5xl font-bold">Our Products</h2>
         <p className="text-lg w-2/3 mx-auto">
-          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Molestiae,
-          sed tempore. Eius illum quia repellendus quidem repellat sint,
-          distinctio sed!
+          Discover our exquisite collection of ceramics and pottery,
+          meticulously crafted for both functional and decorative purposes,
+          adding elegance to any space.
         </p>
       </div>
       {/* all card */}

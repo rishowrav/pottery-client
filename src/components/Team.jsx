@@ -7,9 +7,10 @@ const Team = () => {
             Meet our team
           </h3>
           <p className="max-w-2xl ">
-            At a assumenda quas cum earum ut itaque commodi saepe rem aspernatur
-            quam natus quis nihil quod, hic explicabo doloribus magnam neque,
-            exercitationem eius sunt!
+            Get acquainted with our dedicated team of artisans and
+            professionals, each bringing their unique expertise and passion to
+            the craft, ensuring exceptional quality and service for our valued
+            customers.
           </p>
         </div>
         <div className="grid w-full grid-cols-1 gap-x-6 gap-y-12 sm:grid-cols-2 lg:grid-cols-4">
@@ -17,11 +18,11 @@ const Team = () => {
             <img
               alt=""
               className="object-cover h-56 mx-auto mb-4 bg-center rounded-sm dark:bg-gray-500"
-              src="https://source.unsplash.com/240x320/?portrait?0"
+              src="/img/team1.jpg"
             />
             <div className="flex flex-col items-center">
-              <h4 className="text-xl font-semibold">Leroy Jenkins</h4>
-              <p className="text-sm dark:text-gray-600">Web developer</p>
+              <h4 className="text-xl font-semibold">Sofia Alvarez</h4>
+              <p className="text-sm dark:text-gray-600">Master Potter</p>
               <div className="flex mt-2 space-x-2">
                 <a
                   rel="noopener noreferrer"
@@ -75,11 +76,11 @@ const Team = () => {
             <img
               alt=""
               className="object-cover h-56 mx-auto mb-4 bg-center rounded-sm dark:bg-gray-500"
-              src="https://source.unsplash.com/240x320/?portrait?1"
+              src="/img/team2.jpg"
             />
             <div className="flex flex-col items-center">
-              <h4 className="text-xl font-semibold">Leroy Jenkins</h4>
-              <p className="text-sm dark:text-gray-600">Web developer</p>
+              <h4 className="text-xl font-semibold">Javier Cruz</h4>
+              <p className="text-sm dark:text-gray-600"> Ceramic Sculptor</p>
               <div className="flex mt-2 space-x-2">
                 <a
                   rel="noopener noreferrer"
@@ -133,11 +134,11 @@ const Team = () => {
             <img
               alt=""
               className="object-cover h-56 mx-auto mb-4 bg-center rounded-sm dark:bg-gray-500"
-              src="https://source.unsplash.com/240x320/?portrait?2"
+              src="/img/team3.jpg"
             />
             <div className="flex flex-col items-center">
-              <h4 className="text-xl font-semibold">Leroy Jenkins</h4>
-              <p className="text-sm dark:text-gray-600">Web developer</p>
+              <h4 className="text-xl font-semibold">Emily Chen</h4>
+              <p className="text-sm dark:text-gray-600">Ceramic Artist</p>
               <div className="flex mt-2 space-x-2">
                 <a
                   rel="noopener noreferrer"
@@ -191,11 +192,11 @@ const Team = () => {
             <img
               alt=""
               className="object-cover h-56 mx-auto mb-4 bg-center rounded-sm dark:bg-gray-500"
-              src="https://source.unsplash.com/240x320/?portrait?3"
+              src="/img/team4.jpg"
             />
             <div className="flex flex-col items-center">
-              <h4 className="text-xl font-semibold">Leroy Jenkins</h4>
-              <p className="text-sm dark:text-gray-600">Web developer</p>
+              <h4 className="text-xl font-semibold">Marcus Nguyen</h4>
+              <p className="text-sm dark:text-gray-600">Pottery Designer</p>
               <div className="flex mt-2 space-x-2">
                 <a
                   rel="noopener noreferrer"
@@ -249,11 +250,11 @@ const Team = () => {
             <img
               alt=""
               className="object-cover h-56 mx-auto mb-4 bg-center rounded-sm dark:bg-gray-500"
-              src="https://source.unsplash.com/240x320/?portrait?4"
+              src="/img/team5.jpg"
             />
             <div className="flex flex-col items-center">
-              <h4 className="text-xl font-semibold">Leroy Jenkins</h4>
-              <p className="text-sm dark:text-gray-600">Web developer</p>
+              <h4 className="text-xl font-semibold">Lucas Ramirez</h4>
+              <p className="text-sm dark:text-gray-600">Ceramic Studio Owner</p>
               <div className="flex mt-2 space-x-2">
                 <a
                   rel="noopener noreferrer"
@@ -307,11 +308,11 @@ const Team = () => {
             <img
               alt=""
               className="object-cover h-56 mx-auto mb-4 bg-center rounded-sm dark:bg-gray-500"
-              src="https://source.unsplash.com/240x320/?portrait?5"
+              src="/img/team6.jpg"
             />
             <div className="flex flex-col items-center">
-              <h4 className="text-xl font-semibold">Leroy Jenkins</h4>
-              <p className="text-sm dark:text-gray-600">Web developer</p>
+              <h4 className="text-xl font-semibold">Maya Kim</h4>
+              <p className="text-sm dark:text-gray-600">Porcelain Artisan</p>
               <div className="flex mt-2 space-x-2">
                 <a
                   rel="noopener noreferrer"
@@ -365,11 +366,11 @@ const Team = () => {
             <img
               alt=""
               className="object-cover h-56 mx-auto mb-4 bg-center rounded-sm dark:bg-gray-500"
-              src="https://source.unsplash.com/240x320/?portrait?6"
+              src="/img/team7.jpg"
             />
             <div className="flex flex-col items-center">
-              <h4 className="text-xl font-semibold">Leroy Jenkins</h4>
-              <p className="text-sm dark:text-gray-600">Web developer</p>
+              <h4 className="text-xl font-semibold">Liam Patel </h4>
+              <p className="text-sm dark:text-gray-600">Ceramicist</p>
               <div className="flex mt-2 space-x-2">
                 <a
                   rel="noopener noreferrer"
@@ -423,11 +424,11 @@ const Team = () => {
             <img
               alt=""
               className="object-cover h-56 mx-auto mb-4 bg-center rounded-sm dark:bg-gray-500"
-              src="https://source.unsplash.com/240x320/?portrait?7"
+              src="/img/team8.jpg"
             />
             <div className="flex flex-col items-center">
-              <h4 className="text-xl font-semibold">Leroy Jenkins</h4>
-              <p className="text-sm dark:text-gray-600">Web developer</p>
+              <h4 className="text-xl font-semibold">Isabella Santos </h4>
+              <p className="text-sm dark:text-gray-600">Ceramic Painter</p>
               <div className="flex mt-2 space-x-2">
                 <a
                   rel="noopener noreferrer"
