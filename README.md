@@ -26,6 +26,8 @@
 
 ### Features of Website
 
+- <strong>React Awesome Reveal: </strong> React Awesome Reveal is a library for React apps that provides a set of curated animated primitives. They can be used to add revealing animations to your components when they enter the browser viewport as the user scrolls the page.
+
 - <strong>Lottie React: </strong> LottieFiles takes away the complexity of motion design. It lets you create, edit, test, collaborate, and ship a Lottie in the easiest way possible.
 
 - <strong>React Icon: </strong> Include popular icons in your React projects easily with react-icons, which utilizes ES6 imports that allows you to include only the icons that your project is using.
@@ -42,6 +44,7 @@
 
 ### npm packages that is installed on this Project
 
+- [React Awesome Reveal](https://react-awesome-reveal.morello.dev/)
 - [React Hook Form](https://www.react-hook-form.com/)
 - [Lottie React](https://lottiefiles.com/free-animations/react)
 - [Sweet Alert 2](https://sweetalert2.github.io/)
