@@ -2,17 +2,16 @@ import { useContext, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { FaBarsStaggered } from "react-icons/fa6";
 import { AuthContext } from "../authProvider/AuthProvider";
-import { signOut } from "firebase/auth";
-import auth from "../firebase/firebase.config";
+
 import Swal from "sweetalert2";
 
 const Navbar = () => {
   const [theme, setTheme] = useState(true);
-  const { user, setUser } = useContext(AuthContext);
+  const { user, setUser, logOut } = useContext(AuthContext);
 
   const handleLogout = () => {
     // logout
-    signOut(auth)
+    logOut()
       .then(() => {
         setUser("");
         Swal.fire({
