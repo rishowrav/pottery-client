@@ -6,12 +6,12 @@ import { getAuth } from "firebase/auth";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyD3SzV5KP_FEf9rM9s-kKk5dGqGDieBg6s",
-  authDomain: "pottery-project-d0f5c.firebaseapp.com",
-  projectId: "pottery-project-d0f5c",
-  storageBucket: "pottery-project-d0f5c.appspot.com",
-  messagingSenderId: "688699539136",
-  appId: "1:688699539136:web:781bce4b7adcab6bfd7725",
+  apiKey: import.meta.env.VITE_APIKEY,
+  authDomain: import.meta.env.VITE_AUTHDOMAIN,
+  projectId: import.meta.env.VITE_PROJECTID,
+  storageBucket: import.meta.env.VITE_STORAGEBUCKET,
+  messagingSenderId: import.meta.env.VITE_MESSAGINGSENDERID,
+  appId: import.meta.env.VITE_APPID,
 };
 
 // Initialize Firebase
