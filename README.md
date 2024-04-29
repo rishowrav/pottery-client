@@ -15,7 +15,7 @@
 
 </div>
 
-### Category Name: Ceramics and Pottery
+### CATEGORY NAME: Ceramics and Pottery
 
 - Clay-made pottery
 - Stoneware
