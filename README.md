@@ -15,6 +15,15 @@
 
 </div>
 
+### Selected category Name: Ceramics and Pottery
+
+- Clay-made pottery
+- Stoneware
+- Porcelain
+- Terra Cotta
+- Ceramics & Architectural
+- Home decor pottery
+
 ### Features of Website
 
 - <strong>Lottie React: </strong> LottieFiles takes away the complexity of motion design. It lets you create, edit, test, collaborate, and ship a Lottie in the easiest way possible.
