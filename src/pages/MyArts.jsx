@@ -2,6 +2,7 @@ import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../authProvider/AuthProvider";
 import OwnCreateCraft from "../components/OwnCreateCraft";
 import { IoIosArrowDown } from "react-icons/io";
+import { Fade } from "react-awesome-reveal";
 
 const MyArts = () => {
   const { user } = useContext(AuthContext);
@@ -26,10 +27,13 @@ const MyArts = () => {
 
   return (
     <div>
-      <h2 className="text-5xl font-bold text-center mb-10 mt-6">
-        My Arts - {userCrafts.length}
-      </h2>
+      <Fade duration={1500}>
+        <h2 className="text-5xl font-bold text-center mb-10 mt-6">
+          My Arts - {userCrafts.length}
+        </h2>
+      </Fade>
       {/* filter button */}
+
       <div className="flex justify-end">
         <details className="dropdown">
           <summary className="mb-10 btn bg-[#E35353] border-none hover:bg-[#E35353] text-white rounded-md btn-md px-4 pl-7">
@@ -50,14 +54,16 @@ const MyArts = () => {
       </div>
 
       <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-5">
-        {userCrafts.map((craft) => (
-          <OwnCreateCraft
-            key={craft._id}
-            craft={craft}
-            userCrafts={userCrafts}
-            setUserCrafts={setUserCrafts}
-          ></OwnCreateCraft>
-        ))}
+        <Fade duration={1500}>
+          {userCrafts.map((craft) => (
+            <OwnCreateCraft
+              key={craft._id}
+              craft={craft}
+              userCrafts={userCrafts}
+              setUserCrafts={setUserCrafts}
+            ></OwnCreateCraft>
+          ))}
+        </Fade>
       </div>
     </div>
   );

@@ -52,32 +52,33 @@ const AuthProvider = ({ children }) => {
   };
 
   // current user logged in
+  // useEffect(() => {
+  //   const unsubscribe = onAuthStateChanged(auth, (user) => {
+  //     if (user) {
+  //       setLoading(true);
+  //       setUser(user);
+  //       setLoading(false);
+  //     } else {
+  //       setLoading(false);
+  //     }
+
+  //     return () => unsubscribe();
+  //   });
+  // });
+
+  // current user logged in
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (user) => {
-      if (user) {
-        setLoading(true);
-        setUser(user);
-        setLoading(false);
-      } else {
-        setLoading(false);
-      }
-
-      return () => unsubscribe();
+      setUser(user);
+      setLoading(false);
     });
-  });
+
+    return () => {
+      unsubscribe();
+    };
+  }, []);
 
   // fetch all data to mongoDb
-  const [allData, setAllData] = useState([]);
-
-  useEffect(() => {
-    fetch("https://pottery-backend-server.vercel.app/crafts")
-      .then((res) => res.json())
-      .then((data) => {
-        setLoading(true);
-        setAllData(data);
-        setLoading(false);
-      });
-  }, []);
 
   const dataInfo = {
     createUser,
@@ -85,7 +86,6 @@ const AuthProvider = ({ children }) => {
     user,
     setUser,
     loading,
-    allData,
     googleLogin,
     githubLogin,
     logOut,

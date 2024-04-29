@@ -1,41 +1,44 @@
 import { useLoaderData } from "react-router-dom";
 import Slider from "../components/slider";
-import { useContext, useState } from "react";
+import { useState } from "react";
 import CraftItemsSection from "../components/CraftItemsSection";
 import CraftCategoriesSection from "../components/CraftCategoriesSection";
-import { AuthContext } from "../authProvider/AuthProvider";
+
 import Team from "../components/Team";
 import Feature from "../components/Feature";
+import { Fade } from "react-awesome-reveal";
 
 const Home = () => {
   const loaderData = useLoaderData();
   const [crafts, setCrafts] = useState(loaderData.slice(0, 6));
-  const { loading, allData } = useContext(AuthContext);
 
   return (
     <div className="space-y-24 ">
       {/* Slider */}
-      <Slider></Slider>
+      <Fade duration={1500}>
+        <Slider></Slider>
+      </Fade>
 
       {/* Craft Item  section */}
-      {loading ? (
-        <h1 className="font-bold text-4xl text-center m-10">Loading...</h1>
-      ) : (
-        <CraftItemsSection
-          crafts={crafts}
-          setCrafts={setCrafts}
-          loaderData={allData}
-        ></CraftItemsSection>
-      )}
+
+      <CraftItemsSection
+        crafts={crafts}
+        setCrafts={setCrafts}
+        loaderData={loaderData}
+      ></CraftItemsSection>
 
       {/* craft category section */}
       <CraftCategoriesSection></CraftCategoriesSection>
 
       {/* feature section */}
-      <Feature></Feature>
+      <Fade duration={2000}>
+        <Feature></Feature>
+      </Fade>
 
       {/* our team section */}
-      <Team></Team>
+      <Fade duration={2000}>
+        <Team></Team>
+      </Fade>
     </div>
   );
 };

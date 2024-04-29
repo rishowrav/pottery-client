@@ -1,22 +1,27 @@
+import { Fade } from "react-awesome-reveal";
 import Card from "./Card";
 import PropTypes from "prop-types";
 
 const CraftItemsSection = ({ crafts, setCrafts, loaderData }) => {
   return (
     <div className="space-y-10 ">
-      <div className="text-center space-y-2">
-        <h2 className="text-5xl font-bold">Our Products</h2>
-        <p className="text-lg w-2/3 mx-auto">
-          Discover our exquisite collection of ceramics and pottery,
-          meticulously crafted for both functional and decorative purposes,
-          adding elegance to any space.
-        </p>
-      </div>
+      <Fade duration={1500}>
+        <div className="text-center space-y-2">
+          <h2 className="text-5xl font-bold">Our Products</h2>
+          <p className="text-lg w-2/3 mx-auto">
+            Discover our exquisite collection of ceramics and pottery,
+            meticulously crafted for both functional and decorative purposes,
+            adding elegance to any space.
+          </p>
+        </div>
+      </Fade>
       {/* all card */}
       <div className="grid lg:grid-cols-3 md:grid-cols-2 gird-cols-1 gap-5">
-        {crafts.map((craft) => (
-          <Card key={craft._id} craft={craft}></Card>
-        ))}
+        <Fade duration={1500}>
+          {crafts.map((craft) => (
+            <Card key={craft._id} craft={craft}></Card>
+          ))}
+        </Fade>
       </div>
       <div className="text-center">
         <button

@@ -1,27 +1,31 @@
+import { Fade } from "react-awesome-reveal";
 import { useLoaderData } from "react-router-dom";
 
 const CardDetails = () => {
   const craft = useLoaderData();
 
   return (
-    <div data-aos="fade-left" data-aos-duration="1000">
+    <Fade duration={1500}>
       <div className=" bg-base-200 mb-5 ">
         <div className="space-y-4">
           {/* cover image */}
-          <figure
-            className="space-y-2 relative"
-            data-aos="fade-left"
-            data-aos-duration="1000"
-          >
-            <button className="btn btn-md text-xl text-white border-none rounded-sm bg-[#E35353] hover:bg-[#E35353]  absolute right-6 bottom-6 ">
-              {craft.stockStatus}
-            </button>
-            <img
-              src={craft.photoURL}
-              alt=""
-              className="block object-cover object-center w-full h-[400px] md:h-[500px] bg-gray-500"
-            />
-          </figure>
+          <Fade duration={1500}>
+            <figure
+              className="space-y-2 relative"
+              data-aos="fade-left"
+              data-aos-duration="1000"
+            >
+              <button className="btn btn-md text-xl text-white border-none rounded-sm bg-[#E35353] hover:bg-[#E35353]  absolute right-6 bottom-6 ">
+                {craft.stockStatus}
+              </button>
+              <img
+                src={craft.photoURL}
+                alt=""
+                className="block object-cover object-center w-full h-[400px] md:h-[500px] bg-gray-500"
+              />
+            </figure>
+          </Fade>
+
           <div
             className="space-y-4 px-8 pb-4 "
             data-aos="fade-left"
@@ -97,7 +101,7 @@ const CardDetails = () => {
           </div>
         </div>
       </div>
-    </div>
+    </Fade>
   );
 };
 
