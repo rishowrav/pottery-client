@@ -1,6 +1,10 @@
+import { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
+import { AuthContext } from "../authProvider/AuthProvider";
 
 const Footer = () => {
+  const { user } = useContext(AuthContext);
+
   return (
     <footer className="bg-base-200 mt-24 ">
       <div className="footer py-10 lg:px-0 px-1 w-[1100px] container mx-auto text-base-content">
@@ -13,19 +17,21 @@ const Footer = () => {
             <img className="" src="img/logo.png" alt="" />
           </Link>
           <p>
-            ACME Industries Ltd.
+            Pottery Industries Ltd.
             <br />
-            Providing reliable tech since 1992
+            31 Walwyn Rd, Charlbury
             <br />
-            Contact: +8834234432432
+            Contact: +078 2558 7672
           </p>
         </aside>
         <nav>
-          <h6 className="footer-title">Services</h6>
-          <a className="link link-hover">Branding</a>
-          <a className="link link-hover">Design</a>
-          <a className="link link-hover">Marketing</a>
-          <a className="link link-hover">Advertisement</a>
+          <h6 className="footer-title">Catagories</h6>
+          <a className="link link-hover">Home Decor Pottery</a>
+          <a className="link link-hover">Porcelain</a>
+          <a className="link link-hover">Ceramics & Architectural</a>
+          <a className="link link-hover">Terra Cotta</a>
+          <a className="link link-hover">Stoneware</a>
+          <a className="link link-hover">Clay Made Pottery</a>
         </nav>
 
         {/* footer navbar */}
@@ -39,13 +45,17 @@ const Footer = () => {
             <li className=" text-base-600 ">
               <NavLink to="/allArts">All Arts</NavLink>
             </li>
-            <li className=" text-base-600 ">
-              <NavLink to="/addCraft">Add Craft</NavLink>
-            </li>
+            {user && (
+              <>
+                <li className=" text-base-600 ">
+                  <NavLink to="/addCraft">Add Craft</NavLink>
+                </li>
 
-            <li className=" text-base-600 ">
-              <NavLink to="/myArts">My Arts</NavLink>
-            </li>
+                <li className=" text-base-600 ">
+                  <NavLink to="/myArts">My Arts</NavLink>
+                </li>
+              </>
+            )}
           </ul>
         </nav>
 
