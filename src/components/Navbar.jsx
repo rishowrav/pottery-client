@@ -2,7 +2,6 @@ import { useContext, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { FaBarsStaggered } from "react-icons/fa6";
 import { AuthContext } from "../authProvider/AuthProvider";
-
 import Swal from "sweetalert2";
 
 const Navbar = () => {
@@ -86,6 +85,7 @@ const Navbar = () => {
           <img className="" src="/img/logo.png" alt="" />
         </Link>
       </div>
+
       <div className="navbar-center hidden lg:flex">
         <ul className="menu  menu-horizontal text-[16px] font-bold ">
           {links}

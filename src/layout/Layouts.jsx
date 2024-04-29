@@ -7,9 +7,8 @@ const Layouts = () => {
   return (
     <div>
       <div className="lg:w-[1100px] container mx-auto">
-        <Fade duration={1500}>
-          <Navbar></Navbar>
-        </Fade>
+        <Navbar></Navbar>
+
         <Outlet></Outlet>
       </div>
       <Fade duration={1500}>
