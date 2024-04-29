@@ -2,9 +2,9 @@ import PropTypes from "prop-types";
 import { useContext } from "react";
 import { AuthContext } from "../authProvider/AuthProvider";
 import { Navigate, useLocation } from "react-router-dom";
-import Lottie from "lottie-react";
+// import Lottie from "lottie-react";
 // import Parrot from "../../public/Parrot.json";
-import loadingAnimation from "../../public/loadingAnimation.json";
+// import loadingAnimation from "../../public/loadingAnimation.json";
 
 const PrivateRoute = ({ children }) => {
   const { user, loading } = useContext(AuthContext);
@@ -13,10 +13,10 @@ const PrivateRoute = ({ children }) => {
   if (loading) {
     return (
       <div className="w-[200px] mx-auto">
-        <Lottie loop={true} animationData={loadingAnimation}></Lottie>
-        {/* <h1 className="text-4xl font-bold text-center h-[400px] flex items-center justify-center">
-          <span>Loading.....</span>
-        </h1> */}
+        {/* <Lottie loop={true} animationData={loadingAnimation}></Lottie> */}
+        <h1 className="text-4xl font-bold text-center h-[400px] flex items-center justify-center">
+          <span className="loading loading-spinner w-32 h-32"></span>
+        </h1>
       </div>
     );
   }

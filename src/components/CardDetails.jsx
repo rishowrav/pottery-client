@@ -1,5 +1,3 @@
-import { FaCheckCircle } from "react-icons/fa";
-import { IoLocationSharp } from "react-icons/io5";
 import { useLoaderData } from "react-router-dom";
 
 const CardDetails = () => {
@@ -41,25 +39,6 @@ const CardDetails = () => {
               </dir>
 
               <hr className="border border-[#E3535396] border-b-0 my-4 mt-3" />
-              {/* facilites */}
-              <p className="font-bold bg-[#E353531A] px-4 py-3 text-[#E35353]">
-                Facilitices
-              </p>
-              <ul className="ml-6">
-                <li className="flex items-center gap-2">
-                  <FaCheckCircle className="text-[#E35353E6]" />{" "}
-                  <span>Fac</span>
-                </li>
-                <li className="flex items-center gap-2">
-                  <FaCheckCircle className="text-[#E35353E6]" />{" "}
-                  <span>Fac</span>
-                </li>
-                <li className="flex items-center gap-2">
-                  <FaCheckCircle className="text-[#E35353E6]" />{" "}
-                  <span>Fac</span>
-                </li>
-              </ul>
-              <hr className="border border-[#E3535396] border-b-0 my-4 mt-3" />
 
               {/* description */}
               <p className="py-2">
@@ -71,8 +50,9 @@ const CardDetails = () => {
 
               {/* Location */}
               <div className="flex items-center gap-2">
-                <IoLocationSharp className="text-[#E35353] text-xl" />{" "}
-                <span className="text-md ">Location</span>
+                <span className="text-md ">
+                  <b>Added by:</b> {craft.userName}
+                </span>
               </div>
 
               <hr className="border border-[#E3535396] border-b-0 my-4 mt-3" />
@@ -83,18 +63,18 @@ const CardDetails = () => {
                   <tbody className="">
                     {/* row 1 */}
                     <tr className="border-none ">
-                      <td className="p-1 lg:w-[200px]">Number of Bed:</td>
-                      <td className="font-bold p-1">02</td>
+                      <td className="p-1 lg:w-[200px]">Processing Time:</td>
+                      <td className="font-bold p-1">{craft.processingTime}</td>
                     </tr>
                     {/* row 2 */}
                     <tr className="border-none">
-                      <td className="p-1 lg:w-[200px]">Number of Bath:</td>
-                      <td className="font-bold p-1">04</td>
+                      <td className="p-1 lg:w-[200px]">Customization:</td>
+                      <td className="font-bold p-1">{craft.customization}</td>
                     </tr>
                     {/* row 3 */}
                     <tr className="border-none">
-                      <td className="p-1 lg:w-[200px]">Area:</td>
-                      <td className="font-bold p-1">1500 sqft</td>
+                      <td className="p-1 lg:w-[200px]">Rating</td>
+                      <td className="font-bold p-1">{craft.rating}.0</td>
                     </tr>
                   </tbody>
                 </table>
@@ -111,7 +91,7 @@ const CardDetails = () => {
             <hr className="border border-[#E3535396] border-b-0 my-4 mt-3" />
             <div className="flex justify-end">
               <button className="btn btn-sm md:btn-md lg:btn-lg hover:text-[#E35353] text-white duration-300 border-[#E35353] border-1  rounded-sm hover:border-[#E35353] hover:bg-transparent  bg-[#E35353]  ">
-                Book Now
+                Buy Now
               </button>
             </div>
           </div>
