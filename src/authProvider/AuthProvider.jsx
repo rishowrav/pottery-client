@@ -16,6 +16,8 @@ export const AuthContext = createContext(null);
 const AuthProvider = ({ children }) => {
   const [user, setUser] = useState("");
   const [loading, setLoading] = useState(true);
+  const [loadingData, setLoadingData] = useState(true);
+  const [craftsData, setCraftsData] = useState([]);
 
   // provider
   const GoogleProvider = new GoogleAuthProvider();
@@ -78,6 +80,16 @@ const AuthProvider = ({ children }) => {
     };
   }, []);
 
+  useEffect(() => {
+    fetch("https://pottery-backend-server.vercel.app/crafts")
+      .then((res) => res.json())
+      .then((data) => {
+        setLoadingData(true);
+        setCraftsData(data);
+        setLoadingData(false);
+      });
+  }, []);
+
   // fetch all data to mongoDb
 
   const dataInfo = {
@@ -89,6 +101,8 @@ const AuthProvider = ({ children }) => {
     googleLogin,
     githubLogin,
     logOut,
+    craftsData,
+    loadingData,
   };
 
   return (
