@@ -54,33 +54,6 @@ const Home = () => {
               <Team></Team>
             </Fade>
           </div>
-          <div className="space-y-24 ">
-            {/* Slider */}
-            <Fade duration={1500}>
-              <Slider></Slider>
-            </Fade>
-
-            {/* Craft Item  section */}
-
-            <CraftItemsSection
-              crafts={crafts}
-              setCrafts={setCrafts}
-              loaderData={craftsData}
-            ></CraftItemsSection>
-
-            {/* craft category section */}
-            <CraftCategoriesSection></CraftCategoriesSection>
-
-            {/* feature section */}
-            <Fade duration={2000}>
-              <Feature></Feature>
-            </Fade>
-
-            {/* our team section */}
-            <Fade duration={2000}>
-              <Team></Team>
-            </Fade>
-          </div>
         </div>
       )}
     </>
