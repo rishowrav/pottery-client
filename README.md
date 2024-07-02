@@ -15,14 +15,13 @@
 
 </div>
 
-### CATEGORY NAME: Ceramics and Pottery
+### Live Site Link: https://pottery-project-d0f5c.web.app/
 
-- Clay-made pottery
-- Stoneware
-- Porcelain
-- Terra Cotta
-- Ceramics & Architectural
-- Home decor pottery
+### Client Side Link: https://github.com/rishowrav/study-together-client
+
+### Server Side Link: https://github.com/rishowrav/study-together-server
+
+<hr>
 
 ### Features of Website
 
