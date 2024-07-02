@@ -17,9 +17,9 @@
 
 ### Live Site Link: https://pottery-project-d0f5c.web.app/
 
-### Client Side Link: https://github.com/rishowrav/study-together-client
+### Client Side Link: https://github.com/rishowrav/pottery-client
 
-### Server Side Link: https://github.com/rishowrav/study-together-server
+### Server Side Link: https://github.com/rishowrav/pottery-server
 
 <hr>
 
